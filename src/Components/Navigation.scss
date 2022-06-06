@@ -1,3 +1,144 @@
-body{
-    background-color: black;
+// VARIABLES
+
+$color1:#3ddac4 ;
+$color2:#2c4272 ;
+$color3:#87acc7 ;
+$color4:#dee1df ;
+
+// ANIMACIONES
+
+@keyframes slideIn{
+    from{}
+    to{transform: translateX(0);}
+}
+
+// ESTILOS GLOBALES
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #000;
+    a{
+        text-decoration: none;
+    }
+}
+// HEADER
+
+.header{
+    width: 100%;
+    background-color: white;
+    font-family: $font1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 7%;
+    text-transform: uppercase;
+    position: fixed;
+    z-index: 5;
+}
+
+.logo{display: flex;}
+
+.icono{
+    height: 50px;
+    transform: translateY(-100rem);
+    animation: slideIn 1s forwards;
+}
+
+.nombre{
+    font-size: 1.653rem;
+    line-height: 50px;
+    transform: translateY(-100rem);
+    animation: slideIn 1s forwards;
+    span{
+        color: $color1;
+    }
+    &:hover{
+        &::before, &::after{
+        transform: scaleX(1);
+        }
+    }
+    &::before, &::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 0.031rem;
+        background-color: $color1;
+        left: 0;
+        transform: scaleX(0);
+        transition: all .5s;
+    }
+    &::before{
+        top: 0;
+        transform-origin: left;
+    }
+    &::after {
+        bottom: 0;
+        transform-origin: left;
+    }
+}
+
+// NAVBAR
+
+.nav-hamburguesa {
+    display: none;
+    color: white;
+    background: none;
+    border: none;
+    font-size: 1.875rem;
+    padding: 0 1.25rem;
+    line-height: 3.125rem;
+    cursor: pointer;
+}
+
+#menu{
+    display: none;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 2%;
+    font-weight: bold;
+    margin: 0;
+    li a{
+        color: black;
+        position: relative;
+        letter-spacing: 0.125rem;
+        padding: 0.5rem 1.5rem;
+        border-radius: 0.5rem;
+        transition: all .5s;
+        &:hover{
+            background: $color3;
+            color: white;
+        }
+    }
+}
+
+.nav-animaciones{
+    li{
+        list-style: none;
+        transform: translateY(-100rem);
+        animation: slideIn .5s forwards;
+        &:nth-child(1){animation-delay: .5s;}
+        &:nth-child(2){animation-delay: .5s;}
+        &:nth-child(3){animation-delay: .5s;}
+        &:nth-child(4){animation-delay: .5s;}
+    }
+}
+
+// CARRITO
+
+.cart{
+    font-size: 30px;
+    padding: 10px;
+    line-height: 50px;
+    transform: translateY(-100rem);
+    animation: slideIn 1s forwards;
+    &:hover{
+        font-size: 32px;
+        transition: all .5s;
+    }
 }
