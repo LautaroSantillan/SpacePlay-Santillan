@@ -5,6 +5,8 @@ $color2:#2c4272 ;
 $color3:#87acc7 ;
 $color4:#dee1df ;
 
+$font1: 'Roboto Cn', sans-serif;
+
 // ANIMACIONES
 
 @keyframes slideIn{
@@ -38,10 +40,14 @@ $color4:#dee1df ;
     z-index: 5;
 }
 
-.logo{display: flex;}
+.logo{
+    display: flex;
+}
 
 .icono{
     height: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
     transform: translateY(-100rem);
     animation: slideIn 1s forwards;
 }
@@ -49,6 +55,7 @@ $color4:#dee1df ;
 .nombre{
     font-size: 1.653rem;
     line-height: 50px;
+    padding: 0px 10px;
     transform: translateY(-100rem);
     animation: slideIn 1s forwards;
     span{
@@ -140,5 +147,21 @@ $color4:#dee1df ;
     &:hover{
         font-size: 32px;
         transition: all .5s;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .header{
+        justify-content: space-around;
+    }
+    .navbar{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .header{
+        justify-content: space-evenly;
+        padding: 0.5rem 2%;
     }
 }

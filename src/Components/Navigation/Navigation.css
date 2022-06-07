@@ -55,6 +55,8 @@
 
 .icono {
   height: 50px;
+  border: 1px solid black;
+  border-radius: 50%;
   -webkit-transform: translateY(-100rem);
           transform: translateY(-100rem);
   -webkit-animation: slideIn 1s forwards;
@@ -64,6 +66,7 @@
 .nombre {
   font-size: 1.653rem;
   line-height: 50px;
+  padding: 0px 10px;
   -webkit-transform: translateY(-100rem);
           transform: translateY(-100rem);
   -webkit-animation: slideIn 1s forwards;
@@ -191,5 +194,24 @@
   font-size: 32px;
   -webkit-transition: all .5s;
   transition: all .5s;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .navbar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    padding: 0.5rem 2%;
+  }
 }
 /*# sourceMappingURL=Navigation.css.map */

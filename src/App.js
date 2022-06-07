@@ -1,13 +1,11 @@
 //import logo from './logo.svg';
 import './App.css';
-import Navigation from "./Components/Navigation";
+import Navigation from "./Components/Navigation/Navigation";
 
 function App() {
   return (
     <div className="App">
       <Navigation />
-      <h1>My App</h1>
-      <p>Por Lautaro Santillan</p>
     </div>
   );
 }
