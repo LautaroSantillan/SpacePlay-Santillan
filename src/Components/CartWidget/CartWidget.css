@@ -1,0 +1,40 @@
+@-webkit-keyframes slideIn {
+  from {
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+.cart {
+  font-size: 25px;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translateY(-100rem);
+          transform: translateY(-100rem);
+  -webkit-animation: slideIn 1s forwards;
+          animation: slideIn 1s forwards;
+}
+
+.cart:hover {
+  font-size: 27px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.contadorCart {
+  margin: 0px 5px;
+}
+/*# sourceMappingURL=CartWidget.css.map */

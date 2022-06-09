@@ -1,0 +1,25 @@
+// ANIMACIONES
+
+@keyframes slideIn{
+    from{}
+    to{transform: translateX(0);}
+}
+
+// CARRITO
+
+.cart{
+    font-size: 25px;
+    padding: 10px;
+    display: flex;
+    // line-height: 50px;
+    transform: translateY(-100rem);
+    animation: slideIn 1s forwards;
+    &:hover{
+        font-size: 27px;
+        transition: all .5s;
+    }
+}
+
+.contadorCart{
+    margin: 0px 5px;
+}

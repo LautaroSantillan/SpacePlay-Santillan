@@ -55,12 +55,17 @@
 
 .icono {
   height: 50px;
-  border: 1px solid black;
-  border-radius: 50%;
   -webkit-transform: translateY(-100rem);
           transform: translateY(-100rem);
   -webkit-animation: slideIn 1s forwards;
           animation: slideIn 1s forwards;
+}
+
+.icono:hover {
+  border: 1px solid #3ddac4;
+  border-radius: 50%;
+  -webkit-transition: all 0.01s;
+  transition: all 0.01s;
 }
 
 .nombre {
@@ -178,22 +183,6 @@
 .nav-animaciones li:nth-child(4) {
   -webkit-animation-delay: .5s;
           animation-delay: .5s;
-}
-
-.cart {
-  font-size: 30px;
-  padding: 10px;
-  line-height: 50px;
-  -webkit-transform: translateY(-100rem);
-          transform: translateY(-100rem);
-  -webkit-animation: slideIn 1s forwards;
-          animation: slideIn 1s forwards;
-}
-
-.cart:hover {
-  font-size: 32px;
-  -webkit-transition: all .5s;
-  transition: all .5s;
 }
 
 @media screen and (max-width: 768px) {

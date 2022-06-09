@@ -46,10 +46,13 @@ $font1: 'Roboto Cn', sans-serif;
 
 .icono{
     height: 50px;
-    border: 1px solid black;
-    border-radius: 50%;
     transform: translateY(-100rem);
     animation: slideIn 1s forwards;
+    &:hover{
+        border: 1px solid $color1;
+        border-radius: 50%;
+        transition: all 0.01s;
+    }
 }
 
 .nombre{
@@ -133,20 +136,6 @@ $font1: 'Roboto Cn', sans-serif;
         &:nth-child(2){animation-delay: .5s;}
         &:nth-child(3){animation-delay: .5s;}
         &:nth-child(4){animation-delay: .5s;}
-    }
-}
-
-// CARRITO
-
-.cart{
-    font-size: 30px;
-    padding: 10px;
-    line-height: 50px;
-    transform: translateY(-100rem);
-    animation: slideIn 1s forwards;
-    &:hover{
-        font-size: 32px;
-        transition: all .5s;
     }
 }
 
