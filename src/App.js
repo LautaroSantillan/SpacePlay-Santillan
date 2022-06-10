@@ -6,11 +6,8 @@ import ItemListContainer from "./Components/ItemListContainer/ItemListContainer"
 function App() {
   return (
     <div className="App">
-      <div className='navigation'>
+      <div className='header-container'>
         <Navigation />
-      </div>
-      <div className='main'>
-        <ItemListContainer />
       </div>
     </div>
   );
