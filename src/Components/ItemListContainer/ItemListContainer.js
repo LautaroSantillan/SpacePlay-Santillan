@@ -4,11 +4,14 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import ItemCount from "../ItemCount/ItemCount";
+import { useState } from 'react';
 
 const CardComponent = ({ img, name, price, description }) => {
-    const addToCart = (qty) => {
-
-    } 
+    // cont [add, setAdd] = useState()
+	
+	// const onAdd = (qty) => {
+	// 	setAdd(add)
+    // } 
 
 	return (
 		<Card sx={{ maxWidth: 345 }}>
@@ -25,7 +28,9 @@ const CardComponent = ({ img, name, price, description }) => {
 						{description}
 					</Typography>
 				</CardContent>
-                <ItemCount stock={5} initial={1} onAdd={addToCart}/>
+				{/* <div className='count-container'>
+					<ItemCount stock={5} initial={1} onAdd={onAdd} />
+				</div> */}
 			</CardActionArea>
 		</Card>
 	);
