@@ -1,0 +1,43 @@
+.button-container {
+  width: auto;
+  margin: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid royalblue;
+}
+
+.button-container button {
+  font-size: large;
+  padding: 1px;
+  margin: 5px;
+  border: none;
+  background: none;
+  color: #87acc7 !important;
+}
+
+.button-container p {
+  font-size: large;
+  padding: 1px;
+  margin: 5px;
+}
+
+.cart-container {
+  padding: 5px;
+}
+
+.cart-container button {
+  width: 100%;
+  font-size: 15px;
+  padding: 5px;
+  text-transform: capitalize;
+  border: 1px solid royalblue;
+  color: royalblue !important;
+  background-color: aliceblue;
+}
+/*# sourceMappingURL=ItemCount.css.map */

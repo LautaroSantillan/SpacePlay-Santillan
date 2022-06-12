@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import "./ItemCount.css";
 
 const ItemCount = ({stock, initial, onAdd}) => {
     const[qty, setQty] = useState(initial); //qty = quantity
@@ -12,7 +13,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
         }
     }
     const restQty = () => {
-        if(qty > 0) {
+        if(qty > initial) {
             setQty(qty - 1);
         }
         else{
@@ -21,11 +22,16 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
 
     return (
+        <>
         <div className="button-container">
             <button onClick={sumaQty}> + </button>
             <p>{qty}</p>
             <button onClick={restQty}> - </button>
         </div>
+        <div className="cart-container">
+            <button onClick={()=>onAdd(qty)}> Agregar al carrito </button>
+        </div>
+        </>
     );
 };
 

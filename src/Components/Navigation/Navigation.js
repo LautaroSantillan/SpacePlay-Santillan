@@ -15,8 +15,8 @@ const Navigation = () => {
                 <i className="fas fa-bars"></i>
                 </label>
                 <ul className="navbar nav-animaciones">
+                <li><a href="">INICIO</a></li>   
                 <li><a href="">PRODUCTOS</a></li>
-                <li><a href="">GALERIA</a></li>
                 <li><a href="">CONTACTO</a></li>
                 </ul>
             </nav>
