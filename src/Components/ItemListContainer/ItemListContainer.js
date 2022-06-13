@@ -26,10 +26,10 @@ const ItemListContainer = ({ img, name, price, description }) => {
 						{description}
 					</Typography>
 				</CardContent>
-				<div className='count-container'>
-					<ItemCount stock={5} initial={1} onAdd={agregarAlCarrito} />
-				</div>
 			</CardActionArea>
+			<div className='count-container'>
+				<ItemCount stock={5} initial={1} onAdd={agregarAlCarrito} />
+			</div>
 		</Card>
 	);
 };
