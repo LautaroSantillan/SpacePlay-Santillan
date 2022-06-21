@@ -1,7 +1,7 @@
 import ItemCount from "../ItemCount/ItemCount"
 import "./ItemDetail.css";
 
-const ItemDetail = ({ name, description, descriptionPlus, descriptionPlus2, descriptionPlus3, price, img, img2, img3, category }) => {
+const ItemDetail = ({ name, description, descriptionPlus, descriptionPlus2, descriptionPlus3, price, pictureUrl, pictureUrl2, pictureUrl3, category }) => {
     const agregarAlCarrito = (cant) => {
         console.log(`Se agregaron ${cant} unidades al carrito`)
     }
@@ -17,13 +17,13 @@ const ItemDetail = ({ name, description, descriptionPlus, descriptionPlus2, desc
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                        <img src={img} class="d-block w-100" alt={name} />
+                        <img src={pictureUrl} class="d-block w-100" alt={name} />
                         </div>
                         <div class="carousel-item">
-                        <img src={img2}  class="d-block w-100" alt={name} />
+                        <img src={pictureUrl2}  class="d-block w-100" alt={name} />
                         </div>
                         <div class="carousel-item">
-                        <img src={img3} class="d-block w-100" alt={name} />
+                        <img src={pictureUrl3} class="d-block w-100" alt={name} />
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
