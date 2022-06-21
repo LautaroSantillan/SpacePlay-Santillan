@@ -1,4 +1,4 @@
-[
+export const productosList = [
     {
         "id": 1,
         "title": "PlayStation® 5",
@@ -9,7 +9,8 @@
         "price": 200000,
         "pictureUrl": "https://arsonyb2c.vtexassets.com/arquivos/ids/359142/PlayStation-5-DualShock.jpg?v=637818378103030000",
         "pictureUrl2": "https://arsonyb2c.vtexassets.com/arquivos/ids/348012-1200-auto?v=637363629969070000&width=1200&height=auto&aspect=true",
-        "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/348013-1200-auto?v=637363630148730000&width=1200&height=auto&aspect=true"
+        "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/348013-1200-auto?v=637363630148730000&width=1200&height=auto&aspect=true",
+        "category": "consola"
     },
     {
         "id": 2,
@@ -21,7 +22,8 @@
         "price": 15000,
         "pictureUrl": "https://arsonyb2c.vtexassets.com/arquivos/ids/348023-1200-auto?v=637363644415730000&width=1200&height=auto&aspect=true",
         "pictureUrl2":"https://arsonyb2c.vtexassets.com/arquivos/ids/348024-1200-auto?v=637363644637300000&width=1200&height=auto&aspect=true",
-        "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/348026-1200-auto?v=637363644949470000&width=1200&height=auto&aspect=true"
+        "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/348026-1200-auto?v=637363644949470000&width=1200&height=auto&aspect=true",
+        "category": "joysticks"
     },
     {
         "id": 3,
@@ -33,7 +35,8 @@
         "price": 15000,
         "pictureUrl": "https://arsonyb2c.vtexassets.com/arquivos/ids/357022-1200-auto?v=637588179574830000&width=1200&height=auto&aspect=true",
         "pictureUrl2": "https://arsonyb2c.vtexassets.com/arquivos/ids/357023-1200-auto?v=637588179662700000&width=1200&height=auto&aspect=true",
-        "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/357093-1200-auto?v=637607230445800000&width=1200&height=auto&aspect=true"
+        "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/357093-1200-auto?v=637607230445800000&width=1200&height=auto&aspect=true",
+        "category": "joysticks"
     },
     {
         "id": 4,
@@ -45,7 +48,8 @@
         "price": 20000,
         "pictureUrl": "https://arsonyb2c.vtexassets.com/arquivos/ids/358082-1200-auto?v=637715392721830000&width=1200&height=auto&aspect=true",
         "pictureUrl2": "https://arsonyb2c.vtexassets.com/arquivos/ids/348062-1200-auto?v=637363806123470000&width=1200&height=auto&aspect=true",
-        "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/348063-1200-auto?v=637363806239870000&width=1200&height=auto&aspect=true"
+        "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/348063-1200-auto?v=637363806239870000&width=1200&height=auto&aspect=true",
+        "category": "accesorios"
     },
     {
         "id": 5,
@@ -57,7 +61,8 @@
         "price": 11000,
         "pictureUrl": "https://arsonyb2c.vtexassets.com/arquivos/ids/348031-1200-auto?v=637363675754130000&width=1200&height=auto&aspect=true",
         "pictureUrl2": "https://arsonyb2c.vtexassets.com/arquivos/ids/348030-1200-auto?v=637363675589270000&width=1200&height=auto&aspect=true",
-        "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/348032-1200-auto?v=637363675954530000&width=1200&height=auto&aspect=true"
+        "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/348032-1200-auto?v=637363675954530000&width=1200&height=auto&aspect=true",
+        "category": "accesorios"
     },
     {
         "id": 6,
@@ -69,6 +74,32 @@
         "price": 54000,
         "pictureUrl": "https://arsonyb2c.vtexassets.com/arquivos/ids/359241-1200-auto?v=637834738113470000&width=1200&height=auto&aspect=true",
         "pictureUrl2": "https://arsonyb2c.vtexassets.com/arquivos/ids/359238-1200-auto?v=637834735028000000&width=1200&height=auto&aspect=true",
-        "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/359240-1200-auto?v=637834738013330000&width=1200&height=auto&aspect=true"
+        "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/359240-1200-auto?v=637834738013330000&width=1200&height=auto&aspect=true",
+        "category": "accesorios"
     }
 ]
+
+export const getProductById = (id) =>{
+    return new Promise ((resolve, reject) => {
+        setTimeout(() => {
+            if(productosList.length>0){
+                resolve(productosList.find(unProducto => unProducto.id === parseInt(id)))}
+            else{
+                reject("Sin datos")
+            } 
+        }, 1000);
+    })
+}
+
+// PROXIMO DESAFIO
+// export const getProducts = (categoria) =>{
+//     return new Promise ((resolve,reject) => {
+//         setTimeout(() => {
+//             if(listadoProdutos.length>0){
+//                 resolve(listadoProdutos.filter(unProducto => unProducto.category === categoria))}
+//             else{
+//                 reject("Sin datos")
+//             } 
+//         }, 500);
+//     })
+// }

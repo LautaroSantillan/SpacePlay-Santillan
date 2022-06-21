@@ -5,8 +5,6 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import "./Item.css";
-import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
-import { CenterFocusStrong } from '@mui/icons-material';
 
 export default function Item ({ data }) {
 	const styles = {
@@ -28,11 +26,11 @@ export default function Item ({ data }) {
 				<Typography gutterBottom variant='h5' component='div'>
 						{data.title}
 					</Typography>
-					<Typography variant='body2' color='text.secondary' marginBottom={1} fontWeight="bolder" fontSize={20}>
-						<button className='btn'>Ver producto</button>
-					</Typography>
+				<Typography variant='body2' color='text.secondary' marginBottom={1} fontWeight="bolder" fontSize={20}>
+					<button className='btn'>Ver producto</button>
+				</Typography>
 				</CardContent>
 			</CardActionArea>
 		</Card>
-	);
+	)
 }
