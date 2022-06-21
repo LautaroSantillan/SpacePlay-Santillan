@@ -1,0 +1,38 @@
+.detailContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detailContainer-images{
+    border: 1px solid black;
+    margin: 20px;
+}
+
+.detailContainer-descriptions{
+    // margin: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    h2{
+        font-size: 35px;
+        text-decoration: underline;
+        font-family: sans-serif;
+    }
+    p{
+        text-align: left;
+        font-size: 20px;
+    }
+    ul{
+        list-style: square;
+    }
+    li{
+        text-align: initial;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .detailContainer{
+        flex-wrap: wrap;
+    }
+}

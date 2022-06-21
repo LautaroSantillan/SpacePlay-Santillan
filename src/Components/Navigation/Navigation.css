@@ -141,6 +141,8 @@
   padding: 2rem 2%;
   font-weight: bold;
   margin: 0;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .navbar li a {
