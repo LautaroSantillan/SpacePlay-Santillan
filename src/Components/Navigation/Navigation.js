@@ -1,23 +1,31 @@
 import "./Navigation.css";
 import logo from '../../images/logoCirc.png';
 import CartWidget from "../CartWidget/CartWidget";
+//React-Router-DOM
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
     return (
         <div className="header">
-            <a href="index.html" className="logo">
+            <Link to="/" className="logo">
                 <img src={logo} alt="iconoTienda" className="icono"/>
                 <h1 className="nombre"><span>Space</span>Play</h1>
-            </a>
+            </Link>
             <nav>
                 <input type="checkbox" id="menu"/>
                 <label htmlFor="menu" className="nav-hamburguesa">
                 <i className="fas fa-bars"></i>
                 </label>
                 <ul className="navbar nav-animaciones">
-                <li><a href="index.html">INICIO</a></li>   
-                <li><a href="index.html">NOSOTROS</a></li>
-                <li><a href="index.html">CONTACTO</a></li>
+                    <li><Link to="/" className="Li">
+                        INICIO
+                    </Link></li>
+                    <li><Link to="/nosotros" className="Li">
+                        NOSOTROS
+                    </Link></li>
+                    <li><Link to="/contacto" className="Li">
+                        CONTACTO
+                    </Link></li>
                 </ul>
             </nav>
             <CartWidget />

@@ -22,11 +22,10 @@ const ItemDetailContainer = () => {
 
     return (
         <>
-            <br />
             <h2> DETALLE DEL PRODUCTO </h2>
             <hr />
             {loading ? <div> Cargando... </div>
-                : <ItemDetail {...item} /*name={item.title} description={item.description} descriptionPlus={item.descriptionPlus} descriptionPlus2={item.descriptionPlus2} descriptionPlus3={item.descriptionPlus3} price={item.price} img={item.pictureUrl} img2={item.pictureUrl2} img3={item.pictureUrl3} category={item.category}*//>
+                : <ItemDetail {...item} />
             }
         </>
     )

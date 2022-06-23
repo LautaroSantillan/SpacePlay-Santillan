@@ -91,15 +91,14 @@ export const getProductById = (id) =>{
     })
 }
 
-// PROXIMO DESAFIO
-// export const getProducts = (categoria) =>{
-//     return new Promise ((resolve,reject) => {
-//         setTimeout(() => {
-//             if(listadoProdutos.length>0){
-//                 resolve(listadoProdutos.filter(unProducto => unProducto.category === categoria))}
-//             else{
-//                 reject("Sin datos")
-//             } 
-//         }, 500);
-//     })
-// }
+export const getProducts = (category) =>{
+    return new Promise ((resolve,reject) => {
+        setTimeout(() => {
+            if(productosList.length>0){
+                resolve(productosList.filter(unProducto => unProducto.category === category))}
+            else{
+                reject("Sin datos")
+            } 
+        }, 1000);
+    })
+}

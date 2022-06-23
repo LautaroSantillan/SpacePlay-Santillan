@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "./ItemCount.css";
+import swal from 'sweetalert';
 
 const ItemCount = ({stock, initial, onAdd}) => {
     const[qty, setQty] = useState(initial); //qty = quantity
@@ -9,7 +10,12 @@ const ItemCount = ({stock, initial, onAdd}) => {
             setQty(qty + 1);
         }
         else{
-            alert("Limite de items alcanzado")
+            swal({
+                title: "ATENCIÓN!",
+                text: "Usted ha alcanzado el limite de items",
+                icon: "info",
+                button: "Continuar"
+            })
         }
     }
     const restQty = () => {
@@ -17,7 +23,12 @@ const ItemCount = ({stock, initial, onAdd}) => {
             setQty(qty - 1);
         }
         else{
-            alert("Usted no puede tener menos de 0 items")
+            swal({
+                title: "ATENCIÓN!",
+                text: "Usted no puede tener menos de 0 items",
+                icon: "info",
+                button: "Continuar"
+            })
         }
     }
 
