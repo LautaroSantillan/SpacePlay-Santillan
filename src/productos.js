@@ -81,24 +81,20 @@ export const productosList = [
 
 export const getProductById = (id) =>{
     return new Promise ((resolve, reject) => {
-        setTimeout(() => {
-            if(productosList.length>0){
-                resolve(productosList.find(unProducto => unProducto.id === parseInt(id)))}
-            else{
-                reject("Sin datos")
-            } 
-        }, 1000);
+        if(productosList.length>0){
+            resolve(productosList.find(unProducto => unProducto.id === parseInt(id)))}
+        else{
+            reject("Sin datos")
+        } 
     })
 }
 
 export const getProducts = (category) =>{
     return new Promise ((resolve,reject) => {
-        setTimeout(() => {
-            if(productosList.length>0){
-                resolve(productosList.filter(unProducto => unProducto.category === category))}
-            else{
-                reject("Sin datos")
-            } 
-        }, 1000);
+        if(productosList.length>0){
+            resolve(productosList.filter(unProducto => unProducto.category === category))}
+        else{
+            reject("Sin datos")
+        }
     })
 }

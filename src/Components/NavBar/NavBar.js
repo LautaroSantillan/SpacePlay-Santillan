@@ -8,13 +8,13 @@ const NavBar = () => {
         <div className='navbar-category'>
             <nav>
                 <ul className="NavBar">
-                    <li><Link to="" className="Li">
+                    <li><Link to="/consolas" className="Li">
                         CONSOLAS
                     </Link></li>
-                    <li><Link to="" className="Li">
+                    <li><Link to="/joysticks" className="Li">
                         JOYSTICKS
                     </Link></li>
-                    <li><Link to="" className="Li">
+                    <li><Link to="/accesorios" className="Li">
                         ACCESORIOS
                     </Link></li>
                 </ul>
