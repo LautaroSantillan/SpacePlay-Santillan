@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import { Button, CardActionArea, CardActions } from '@mui/material';
 import "./Item.css";
 
 export default function Item ({ data }) {
@@ -23,14 +23,16 @@ export default function Item ({ data }) {
 					alt='imagenProducto'
 				/>
 				<CardContent>
-				<Typography gutterBottom variant='h5' component='div'>
+					<Typography gutterBottom variant="h5" component="div">
 						{data.title}
 					</Typography>
-				<Typography variant='body2' color='text.secondary' marginBottom={1} fontWeight="bolder" fontSize={20}>
-					<button className='btn'>Ver producto</button>
-				</Typography>
 				</CardContent>
 			</CardActionArea>
+			<CardActions sx={{ justifyContent: "center" }}>
+				<Button size="small" color="primary" className='btn'>
+					Ver producto
+				</Button>
+			</CardActions>
 		</Card>
 	)
 }

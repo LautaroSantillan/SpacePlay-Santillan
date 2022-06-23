@@ -15,9 +15,9 @@ const Navigation = () => {
                 <i className="fas fa-bars"></i>
                 </label>
                 <ul className="navbar nav-animaciones">
-                <li><a href="">INICIO</a></li>   
-                <li><a href="">PRODUCTOS</a></li>
-                <li><a href="">CONTACTO</a></li>
+                <li><a href="index.html">INICIO</a></li>   
+                <li><a href="index.html">NOSOTROS</a></li>
+                <li><a href="index.html">CONTACTO</a></li>
                 </ul>
             </nav>
             <CartWidget />
