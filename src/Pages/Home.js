@@ -19,7 +19,6 @@ const Home = () => {
     <div className='MainSection' style={styles.MainSection}>
         <Navbar />
         <ItemListContainer />
-        <ItemDetailContainer />
     </div>
     );
 };
