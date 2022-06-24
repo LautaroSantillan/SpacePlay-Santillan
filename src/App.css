@@ -1,8 +1,23 @@
 .App {
   text-align: center;
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: auto 1fr auto;
 }
 
-.footer{
+.header-container{
+  top: 0;
+  width: 100%;
+  height: auto;
+}
+
+.main-container{
+  width: 100%;
+  height: auto;
+}
+
+.footer-container{
   bottom: 0;
   width: 100%;
+  height: auto;
 }

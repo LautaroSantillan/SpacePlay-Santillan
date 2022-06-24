@@ -19,6 +19,8 @@ function App() {
 			<div className="App">
 				<div className='header-container'>
 					<Navigation />
+				</div>
+				<div className='main-container'>
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/Nosotros" element={<Nosotros />} />
@@ -28,7 +30,7 @@ function App() {
 						<Route path="/item/:id" element={<ItemDetailContainer />} />
 					</Routes>
 				</div>
-				<div className='footer'>
+				<div className='footer-container'>
 					<Footer />
 				</div>
 			</div>

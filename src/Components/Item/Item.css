@@ -1,6 +1,6 @@
 .container{
-    border: 1px solid black; 
-    margin: 25px 65px !important;
+    border: 1px solid black !important; 
+    margin: 25px 70px !important;
 }
 
 .btn {
@@ -29,4 +29,10 @@
     background-color: #dee1df !important;
     color: #000 !important;
     background-color: #3ddac4 !important;
+}
+
+@media screen and (max-width: 992px){
+    .container{
+        margin: 20px 10px !important;
+    }
 }

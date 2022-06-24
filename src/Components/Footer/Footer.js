@@ -11,10 +11,10 @@ import { Link } from "react-router-dom";
 
 function Footer() {
     return (
-        <div className="footer row">
+        <div className="footer">
                 <div className="social">
-                    <Link to="/" classNameName='col-12 col-md3 d-flex aling-items-center'>
-                        <img src={logo} alt="iconoTienda" classNameName="mx-2" width={50}/>
+                    <Link to="/">
+                        <img src={logo} alt="iconoTienda" width={50}/>
                     </Link> 
                     <Link to="/"><FaWhatsapp className='icon'/></Link>
                     <Link to="/"><FaFacebook className='icon'/></Link>

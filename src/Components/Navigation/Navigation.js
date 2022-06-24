@@ -1,6 +1,7 @@
 import "./Navigation.css";
 import logo from '../../images/logoCirc.png';
 import CartWidget from "../CartWidget/CartWidget";
+import { GiHamburgerMenu } from 'react-icons/gi';
 //React-Router-DOM
 import { Link } from "react-router-dom";
 
@@ -11,11 +12,11 @@ const Navigation = () => {
                 <img src={logo} alt="iconoTienda" className="icono"/>
                 <h1 className="nombre"><span>Space</span>Play</h1>
             </Link>
-            <nav>
-                <input type="checkbox" id="menu"/>
+            <nav className="navbar-container">
                 <label htmlFor="menu" className="nav-hamburguesa">
-                <i className="fas fa-bars"></i>
+                    <GiHamburgerMenu />
                 </label>
+                <input type="checkbox" id="menu"/>
                 <ul className="navbar nav-animaciones">
                     <li><Link to="/" className="Li">
                         INICIO

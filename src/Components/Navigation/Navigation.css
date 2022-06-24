@@ -118,9 +118,10 @@
   color: white;
   background: none;
   border: none;
-  font-size: 1.875rem;
-  padding: 0 1.25rem;
-  line-height: 3.125rem;
+  font-size: 35px;
+  line-height: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
   cursor: pointer;
 }
 
@@ -188,13 +189,52 @@
           animation-delay: .5s;
 }
 
+@media screen and (max-width: 992px) {
+  .header {
+    height: 6rem;
+  }
+  .navbar-container {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .navbar {
+    background-color: #3ddac4;
+    width: 100%;
+    height: calc(100% - 5rem);
+    left: -100%;
+    top: 6.25rem;
+    margin: 0;
+    padding: 1.25rem 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: fixed;
+    overflow-y: auto;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    z-index: 2;
+  }
+  .nav-hamburguesa {
+    display: block;
+    cursor: pointer;
+  }
+  #menu:checked ~ ul {
+    left: 0;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .header {
     -ms-flex-pack: distribute;
         justify-content: space-around;
-  }
-  .navbar {
-    display: none;
   }
 }
 
