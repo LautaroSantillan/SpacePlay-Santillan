@@ -1,0 +1,56 @@
+.footer{
+    width: 100%;
+    background-color: white;
+    padding: 10px 0;
+    bottom: 0;
+    position: unset;
+}
+
+.social{
+    a{
+        font-size: 25px;
+        color: inherit !important;
+        border: 1px solid white;
+        width: 55px;
+        height: 55px;
+        display: inline-block;
+        border-radius: 50%;
+        margin: 0 10px;
+        opacity: 0.8;
+        &:hover{
+            opacity: 1;
+            border-radius: 1rem 1rem 1rem 1rem;
+            background-color: #87acc7;
+            border: 1px solid black;
+        }
+    }
+}
+
+.icon{
+    width: 35px;
+    height: 35px;
+}
+
+.navbar-footer{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: center;
+    li{
+        display: inline-block;
+        padding: 0 15px;
+    }
+}
+
+.copyright{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    small{
+        font-weight: 500;
+    }
+}
