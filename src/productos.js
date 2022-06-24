@@ -1,4 +1,4 @@
-export const productosList = [
+export const productosList = [ //Array de los productos
     {
         "id": 1,
         "title": "PlayStation® 5",
@@ -78,7 +78,7 @@ export const productosList = [
         "category": "accesorios"
     }
 ]
-
+//Obtener ID de los productos 
 export const getProductById = (id) =>{
     return new Promise ((resolve, reject) => {
         if(productosList.length>0){
@@ -88,13 +88,13 @@ export const getProductById = (id) =>{
         } 
     })
 }
-
-// export const getProducts = (category) =>{
-//     return new Promise ((resolve,reject) => {
-//         if(productosList.length>0){
-//             resolve(productosList.filter(unProducto => unProducto.category === category))}
-//         else{
-//             reject("Sin datos")
-//         }
-//     })
-// }
+//Obtener CATEGORY de los productos
+export const getProducts = (category) =>{
+    return new Promise ((resolve,reject) => {
+        if(productosList.length>0){
+            resolve(productosList.filter(unProducto => unProducto.category === category))}
+        else{
+            reject("Sin datos")
+        }
+    })
+}

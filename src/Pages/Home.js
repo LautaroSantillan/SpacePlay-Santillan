@@ -1,6 +1,8 @@
+//IMPORTS
+//Estilos
 import '../App.css';
+//Componentes
 import ItemListContainer from "../Components/ItemListContainer/ItemListContainer";
-import ItemDetailContainer from '../Components/ItemDetailContainer/ItemDetailContainer';
 import Navbar from "../Components/NavBar/NavBar";
 
 const Home = () => {

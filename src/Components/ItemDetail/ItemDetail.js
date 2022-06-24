@@ -1,7 +1,10 @@
+//IMPORTS
+//Componentes
 import ItemCount from "../ItemCount/ItemCount"
+//Estilos
 import "./ItemDetail.css";
 
-const ItemDetail = ({ name, description, descriptionPlus, descriptionPlus2, descriptionPlus3, price, pictureUrl, pictureUrl2, pictureUrl3, category }) => {
+const ItemDetail = ({ title, description, descriptionPlus, descriptionPlus2, descriptionPlus3, price, pictureUrl, pictureUrl2, pictureUrl3, category }) => {
     const agregarAlCarrito = (cant) => {
         console.log(`Se agregaron ${cant} unidades al carrito`)
     }
@@ -17,13 +20,13 @@ const ItemDetail = ({ name, description, descriptionPlus, descriptionPlus2, desc
                     </div>
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                        <img src={pictureUrl} className="d-block w-100" alt={name} />
+                        <img src={pictureUrl} className="d-block w-100" alt={title} />
                         </div>
                         <div className="carousel-item">
-                        <img src={pictureUrl2}  className="d-block w-100" alt={name} />
+                        <img src={pictureUrl2}  className="d-block w-100" alt={title} />
                         </div>
                         <div className="carousel-item">
-                        <img src={pictureUrl3} className="d-block w-100" alt={name} />
+                        <img src={pictureUrl3} className="d-block w-100" alt={title} />
                         </div>
                     </div>
                     <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -37,7 +40,7 @@ const ItemDetail = ({ name, description, descriptionPlus, descriptionPlus2, desc
                 </div>
             </div>
             <div className="detailContainer-descriptions">
-                <h2>{name}</h2>
+                <h2>{title}</h2>
                 <p>Categoria: {category}</p>
                 <p>Precio Unitario: ${price}</p>
                 <p>{description}</p>
