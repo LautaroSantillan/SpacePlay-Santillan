@@ -1,10 +1,13 @@
+//IMPORTS
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
+//Estilos
 import "./Item.css";
+//React-Router-DOM
 import { NavLink } from "react-router-dom";
 
 export default function Item ({ data }) {
@@ -31,7 +34,7 @@ export default function Item ({ data }) {
 			</CardActionArea>
 			<CardActions sx={{ justifyContent: "center" }}>
 				<Button size="small" color="primary" className='btn'>
-					<NavLink to={'/item/${data.id}'}>Ver producto</NavLink> 
+					<NavLink to={`/item/${data.id}`}>Ver producto</NavLink> 
 				</Button>
 			</CardActions>
 		</Card>

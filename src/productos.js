@@ -89,12 +89,12 @@ export const getProductById = (id) =>{
     })
 }
 
-export const getProducts = (category) =>{
-    return new Promise ((resolve,reject) => {
-        if(productosList.length>0){
-            resolve(productosList.filter(unProducto => unProducto.category === category))}
-        else{
-            reject("Sin datos")
-        }
-    })
-}
+// export const getProducts = (category) =>{
+//     return new Promise ((resolve,reject) => {
+//         if(productosList.length>0){
+//             resolve(productosList.filter(unProducto => unProducto.category === category))}
+//         else{
+//             reject("Sin datos")
+//         }
+//     })
+// }
