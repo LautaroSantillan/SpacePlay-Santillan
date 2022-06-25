@@ -1,4 +1,4 @@
-.button-container{
+.btns-container{
     width: auto;
     margin: 5px;
     display: flex;
@@ -20,12 +20,13 @@
     }
 }
 
-.cart-container{
-    padding: 5px;
+.btn-cart{
+    margin-right: 10px;
     button{
         width: 100%;
-        font-size: 15px;
-        padding: 5px;
+        font-size: large;
+        padding: 1px;
+        margin: 5px;
         text-transform: capitalize;
         border: 1px solid royalblue;
         color: royalblue !important;

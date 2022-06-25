@@ -1,12 +1,17 @@
 //IMPORTS
 //Componentes
+import { useState } from "react";
 import ItemCount from "../ItemCount/ItemCount"
 //Estilos
 import "./ItemDetail.css";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({ title, description, descriptionPlus, descriptionPlus2, descriptionPlus3, price, pictureUrl, pictureUrl2, pictureUrl3, category }) => {
-    const agregarAlCarrito = (cant) => {
-        console.log(`Se agregaron ${cant} unidades al carrito`)
+    const[add, setAdd] = useState(false);
+
+    const addToCart = (qty) => {    
+        setAdd(qty);
+        console.log(`Se agregaron ${qty} unidades al carrito`)
     }
 
     return (
@@ -50,7 +55,17 @@ const ItemDetail = ({ title, description, descriptionPlus, descriptionPlus2, des
                     <li>{descriptionPlus3}</li>
                 </ul>
                 <div className='count-container'>
-                    <ItemCount stock={5} initial={1} onAdd={agregarAlCarrito} />
+                    {
+                        add ?
+                            ""
+                            :
+                            <ItemCount stock={5} initial={0} onAdd={addToCart} />
+                    }
+                    <div className="btn-cart">
+                        <Link to="/cart">
+                            <button>Finalizar Compra</button>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>

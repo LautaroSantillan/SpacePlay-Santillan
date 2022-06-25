@@ -5,6 +5,7 @@ import Navigation from "./Components/Navigation/Navigation";
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import Footer from './Components/Footer/Footer';
+import ItemCount from './Components/ItemCount/ItemCount';
 //React-Router-DOM
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // Pages
@@ -28,6 +29,7 @@ function App() {
 						<Route path="*" element={<Error />} />
 						<Route path="/category/:categoryId" element={<ItemListContainer/>} />
 						<Route path="/item/:id" element={<ItemDetailContainer />} />
+						<Route path="/cart" element={<ItemCount />} />
 					</Routes>
 				</div>
 				<div className='footer-container'>

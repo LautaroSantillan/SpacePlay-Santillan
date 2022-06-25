@@ -1,5 +1,8 @@
+//IMPORTS
 import React, {useState} from "react";
+//Estilos
 import "./ItemCount.css";
+//Sweet Alert
 import swal from 'sweetalert';
 
 const ItemCount = ({stock, initial, onAdd}) => {
@@ -18,6 +21,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
             })
         }
     }
+
     const restQty = () => {
         if(qty > initial) {
             setQty(qty - 1);
@@ -34,14 +38,21 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
     return (
         <>
-        <div className="button-container">
-            <button onClick={sumaQty}> + </button>
-            <p>{qty}</p>
-            <button onClick={restQty}> - </button>
-        </div>
-        <div className="cart-container">
-            <button onClick={()=>onAdd(qty)}> Agregar al carrito </button>
-        </div>
+            <div className="btns-container">
+                <button onClick={sumaQty}> + </button>
+                <p>{qty}</p>
+                <button onClick={restQty}> - </button>
+            </div>
+            {
+                qty > 0 ?
+                <div className="btn-cart">
+                    <button onClick={()=>onAdd(qty)}> Agregar al carrito </button>
+                </div>
+                :
+                <div className="btn-cart">
+                    <button> Agregar al carrito </button>
+                </div>
+            }
         </>
     );
 };
