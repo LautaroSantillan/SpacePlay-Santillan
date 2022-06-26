@@ -4,10 +4,10 @@ import { useState } from "react";
 import ItemCount from "../ItemCount/ItemCount"
 //Estilos
 import "./ItemDetail.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-const ItemDetail = ({ title, description, descriptionPlus, descriptionPlus2, descriptionPlus3, price, pictureUrl, pictureUrl2, pictureUrl3, category }) => {
-    const[add, setAdd] = useState(false);
+const ItemDetail = ({ title, description, descriptionPlus, descriptionPlus2, descriptionPlus3, price, pictureUrl, pictureUrl2, pictureUrl3, category, stock, initial }) => {
+    const[add, setAdd] = useState();
 
     const addToCart = (qty) => {    
         setAdd(qty);
@@ -59,13 +59,15 @@ const ItemDetail = ({ title, description, descriptionPlus, descriptionPlus2, des
                         add ?
                             ""
                             :
-                            <ItemCount stock={5} initial={0} onAdd={addToCart} />
+                            <ItemCount stock={stock} initial={initial} onAdd={addToCart} />
                     }
-                    <div className="btn-cart">
-                        <Link to="/cart">
-                            <button>Finalizar Compra</button>
-                        </Link>
-                    </div>
+                    {
+                        add > 0 && <div className="btn-cart">
+                                        <NavLink to="/cart">
+                                            <button>Finalizar Compra</button>
+                                        </NavLink>
+                                    </div>
+                    }
                 </div>
             </div>
         </div>

@@ -10,7 +10,9 @@ export const productosList = [ //Array de los productos
         "pictureUrl": "https://arsonyb2c.vtexassets.com/arquivos/ids/359142/PlayStation-5-DualShock.jpg?v=637818378103030000",
         "pictureUrl2": "https://arsonyb2c.vtexassets.com/arquivos/ids/348012-1200-auto?v=637363629969070000&width=1200&height=auto&aspect=true",
         "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/348013-1200-auto?v=637363630148730000&width=1200&height=auto&aspect=true",
-        "category": "consola"
+        "category": "consola",
+        "stock": 10,
+        "initial": 0
     },
     {
         "id": 2,
@@ -23,7 +25,9 @@ export const productosList = [ //Array de los productos
         "pictureUrl": "https://arsonyb2c.vtexassets.com/arquivos/ids/348023-1200-auto?v=637363644415730000&width=1200&height=auto&aspect=true",
         "pictureUrl2":"https://arsonyb2c.vtexassets.com/arquivos/ids/348024-1200-auto?v=637363644637300000&width=1200&height=auto&aspect=true",
         "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/348026-1200-auto?v=637363644949470000&width=1200&height=auto&aspect=true",
-        "category": "joysticks"
+        "category": "joysticks",
+        "stock": 10,
+        "initial": 0
     },
     {
         "id": 3,
@@ -36,7 +40,9 @@ export const productosList = [ //Array de los productos
         "pictureUrl": "https://arsonyb2c.vtexassets.com/arquivos/ids/357022-1200-auto?v=637588179574830000&width=1200&height=auto&aspect=true",
         "pictureUrl2": "https://arsonyb2c.vtexassets.com/arquivos/ids/357023-1200-auto?v=637588179662700000&width=1200&height=auto&aspect=true",
         "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/357093-1200-auto?v=637607230445800000&width=1200&height=auto&aspect=true",
-        "category": "joysticks"
+        "category": "joysticks",
+        "stock": 10,
+        "initial": 0
     },
     {
         "id": 4,
@@ -49,7 +55,9 @@ export const productosList = [ //Array de los productos
         "pictureUrl": "https://arsonyb2c.vtexassets.com/arquivos/ids/358082-1200-auto?v=637715392721830000&width=1200&height=auto&aspect=true",
         "pictureUrl2": "https://arsonyb2c.vtexassets.com/arquivos/ids/348062-1200-auto?v=637363806123470000&width=1200&height=auto&aspect=true",
         "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/348063-1200-auto?v=637363806239870000&width=1200&height=auto&aspect=true",
-        "category": "accesorios"
+        "category": "accesorios",
+        "stock": 10,
+        "initial": 0
     },
     {
         "id": 5,
@@ -62,7 +70,9 @@ export const productosList = [ //Array de los productos
         "pictureUrl": "https://arsonyb2c.vtexassets.com/arquivos/ids/348031-1200-auto?v=637363675754130000&width=1200&height=auto&aspect=true",
         "pictureUrl2": "https://arsonyb2c.vtexassets.com/arquivos/ids/348030-1200-auto?v=637363675589270000&width=1200&height=auto&aspect=true",
         "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/348032-1200-auto?v=637363675954530000&width=1200&height=auto&aspect=true",
-        "category": "accesorios"
+        "category": "accesorios",
+        "stock": 10,
+        "initial": 0
     },
     {
         "id": 6,
@@ -75,7 +85,9 @@ export const productosList = [ //Array de los productos
         "pictureUrl": "https://arsonyb2c.vtexassets.com/arquivos/ids/359241-1200-auto?v=637834738113470000&width=1200&height=auto&aspect=true",
         "pictureUrl2": "https://arsonyb2c.vtexassets.com/arquivos/ids/359238-1200-auto?v=637834735028000000&width=1200&height=auto&aspect=true",
         "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/359240-1200-auto?v=637834738013330000&width=1200&height=auto&aspect=true",
-        "category": "accesorios"
+        "category": "accesorios",
+        "stock": 10,
+        "initial": 0
     }
 ]
 //Obtener ID de los productos 

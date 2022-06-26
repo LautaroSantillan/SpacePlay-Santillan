@@ -24,12 +24,12 @@ function App() {
 				<div className='main-container'>
 					<Routes>
 						<Route path="/" element={<Home />} />
-						<Route path="/Nosotros" element={<Nosotros />} />
+						<Route path="/nosotros" element={<Nosotros />} />
 						<Route path="/contacto" element={<Contacto />} />
-						<Route path="*" element={<Error />} />
 						<Route path="/category/:categoryId" element={<ItemListContainer/>} />
 						<Route path="/item/:id" element={<ItemDetailContainer />} />
 						<Route path="/cart" element={<ItemCount />} />
+						<Route path="*" element={<Error />} />
 					</Routes>
 				</div>
 				<div className='footer-container'>

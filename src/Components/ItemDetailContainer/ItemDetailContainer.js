@@ -4,7 +4,6 @@ import { useEffect, useState } from "react"
 import { getProductById } from "../../productos"
 import ItemDetail from "../ItemDetail/ItemDetail"
 //React-Router-DOM
-import { Link } from "react-router-dom";
 import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
@@ -33,9 +32,7 @@ const ItemDetailContainer = () => {
             <h2> DETALLE DEL PRODUCTO </h2>
             <hr />
             <div key={product.id}>
-                <Link to={`/item/${product.id}`}>
-                    <ItemDetail {...product} />
-                </Link>
+                <ItemDetail {...product} />
             </div>
         </div>
     )
