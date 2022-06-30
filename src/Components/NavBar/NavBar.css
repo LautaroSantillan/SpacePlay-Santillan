@@ -15,14 +15,14 @@
   font-weight: bold;
 }
 
-.NavBar li {
+.li {
   padding: 15px;
   list-style: none;
   background-color: #87acc7;
   border: 1px solid black;
 }
 
-.NavBar li:hover {
+.li:hover {
   background: #dee1df;
   text-decoration: underline;
 }

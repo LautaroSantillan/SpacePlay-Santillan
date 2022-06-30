@@ -6,14 +6,15 @@
     padding-top: 20px;
     margin-top: 20px;
     font-weight: bold;
-    li{
-        padding: 15px;
-        list-style: none;
-        background-color: #87acc7 ;
-        border: 1px solid black;
-        &:hover{
-            background: #dee1df;
-            text-decoration: underline;
-        }
+}
+
+.li{
+    padding: 15px;
+    list-style: none;
+    background-color: #87acc7 ;
+    border: 1px solid black;
+    &:hover{
+        background: #dee1df;
+        text-decoration: underline;
     }
 }

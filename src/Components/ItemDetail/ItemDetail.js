@@ -1,18 +1,18 @@
 //IMPORTS
+import { useContext, useState } from "react";
 //Componentes
-import { useState } from "react";
-import ItemCount from "../ItemCount/ItemCount"
+import ItemCount from "../ItemCount/ItemCount";
 //Estilos
 import "./ItemDetail.css";
+//React-Router-Dom
 import { NavLink } from "react-router-dom";
+//Context
+import { CartContext } from "../../Context/CartContext";
 
-const ItemDetail = ({ title, description, descriptionPlus, descriptionPlus2, descriptionPlus3, price, pictureUrl, pictureUrl2, pictureUrl3, category, stock, initial }) => {
+const ItemDetail = ({ product }) => {
     const[add, setAdd] = useState();
 
-    const addToCart = (qty) => {    
-        setAdd(qty);
-        console.log(`Se agregaron ${qty} unidades al carrito`)
-    }
+    const {addItem} = useContext(CartContext)
 
     return (
         <div className="detailContainer">
@@ -25,13 +25,13 @@ const ItemDetail = ({ title, description, descriptionPlus, descriptionPlus2, des
                     </div>
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                        <img src={pictureUrl} className="d-block w-100" alt={title} />
+                        <img src={product.pictureUrl} className="d-block w-100" alt={product.title} />
                         </div>
                         <div className="carousel-item">
-                        <img src={pictureUrl2}  className="d-block w-100" alt={title} />
+                        <img src={product.pictureUrl2}  className="d-block w-100" alt={product.title} />
                         </div>
                         <div className="carousel-item">
-                        <img src={pictureUrl3} className="d-block w-100" alt={title} />
+                        <img src={product.pictureUrl3} className="d-block w-100" alt={product.title} />
                         </div>
                     </div>
                     <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -45,21 +45,21 @@ const ItemDetail = ({ title, description, descriptionPlus, descriptionPlus2, des
                 </div>
             </div>
             <div className="detailContainer-descriptions">
-                <h2>{title}</h2>
-                <p>Categoria: {category}</p>
-                <p>Precio Unitario: ${price}</p>
-                <p>{description}</p>
+                <h2>{product.title}</h2>
+                <p>Categoria: {product.category}</p>
+                <p>Precio Unitario: ${product.price}</p>
+                <p>{product.description}</p>
                 <ul>
-                    <li>{descriptionPlus}</li>
-                    <li>{descriptionPlus2}</li>
-                    <li>{descriptionPlus3}</li>
+                    <li>{product.descriptionPlus}</li>
+                    <li>{product.descriptionPlus2}</li>
+                    <li>{product.descriptionPlus3}</li>
                 </ul>
                 <div className='count-container'>
                     {
                         add ?
                             ""
                             :
-                            <ItemCount stock={stock} initial={initial} onAdd={addToCart} />
+                            <ItemCount item={product} stock={product.stock} initial={product.initial} addItem={addItem} />
                     }
                     {
                         add > 0 && <div className="btn-cart">

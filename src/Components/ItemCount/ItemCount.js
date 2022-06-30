@@ -5,7 +5,7 @@ import "./ItemCount.css";
 //Sweet Alert
 import swal from 'sweetalert';
 
-const ItemCount = ({stock, initial, onAdd}) => {
+const ItemCount = ({item, stock, initial, addItem}) => {
     const[qty, setQty] = useState(initial); //qty = quantity
 
     const sumaQty = () => {
@@ -46,7 +46,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
             {
                 qty > 0 ?
                 <div className="btn-cart">
-                    <button onClick={()=>onAdd(qty)}> Agregar al carrito </button>
+                    <button onClick={() => addItem(item, qty)}> Agregar al carrito </button>
                 </div>
                 :
                 <div className="btn-cart">
