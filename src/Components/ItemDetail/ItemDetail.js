@@ -1,5 +1,5 @@
 //IMPORTS
-import { useContext, useState } from "react";
+import { useContext, /*useState*/ } from "react";
 //Componentes
 import ItemCount from "../ItemCount/ItemCount";
 //Estilos
@@ -10,9 +10,9 @@ import { NavLink } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
 
 const ItemDetail = ({ product }) => {
-    const[add, setAdd] = useState();
+    // const[add, setAdd] = useState();
 
-    const {addItem} = useContext(CartContext)
+    const {addItem, isInCart} = useContext(CartContext)
 
     return (
         <div className="detailContainer">
@@ -54,19 +54,19 @@ const ItemDetail = ({ product }) => {
                     <li>{product.descriptionPlus2}</li>
                     <li>{product.descriptionPlus3}</li>
                 </ul>
-                <div className='count-container'>
+                <div className='count-container'> 
                     {
-                        add ?
-                            ""
-                            :
-                            <ItemCount item={product} stock={product.stock} initial={product.initial} addItem={addItem} />
+                        isInCart(product.id) ?
+                                            ""
+                                            :
+                                            <ItemCount item={product} stock={product.stock} initial={product.initial} addItem={addItem} />
                     }
                     {
-                        add > 0 && <div className="btn-cart">
-                                        <NavLink to="/cart">
-                                            <button>Finalizar Compra</button>
-                                        </NavLink>
-                                    </div>
+                        isInCart(product.id) && <div className="btn-cart">
+                                                    <NavLink to="/cart">
+                                                        <button>Finalizar Compra</button>
+                                                    </NavLink>
+                                                </div>
                     }
                 </div>
             </div>
@@ -74,4 +74,4 @@ const ItemDetail = ({ product }) => {
     )
 }
 
-export default ItemDetail;
+export default ItemDetail; //Para el desafio final sacar los 2 condicionales y hacerlo en uno solo (linea 58-70)

@@ -22,9 +22,14 @@ const CartWidget = () => {
         <div className="cart">
             <NavLink to="/cart">
                 <FaShoppingCart />
-                <p className="contadorCart">
-                    {itemInCart}
-                </p>
+                {
+                    itemInCart === 0 ?
+                                    ""
+                                    :
+                                    <p className="contadorCart">
+                                        {itemInCart}
+                                    </p>
+                }
             </NavLink>
         </div>
     );
