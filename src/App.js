@@ -1,4 +1,6 @@
 //IMPORTS
+import { useEffect, useState } from 'react';
+//Estilos
 import './App.css';
 //Componentes
 import Navigation from "./Components/Navigation/Navigation";
@@ -16,8 +18,27 @@ import Contacto from "./Pages/Contacto";
 import Nosotros from "./Pages/Nosotros";
 import Cart from "./Pages/Cart";
 import Error from "./Pages/Error"; 
-//Function
-function App() {
+//Firebase
+import { db } from "./Firebase/firebaseConfig";
+import { collection, query, getDocs, getDoc } from "firebase/firestore";
+//DEVELOPING
+const App = () => {
+	const [albumData, setAlbumData] = useState([]);
+
+	const getAlbums = async () => {
+		const q = query(collection(db, "playstation"));
+		const querySnapshot = await getDocs(q);
+		const docs = [];
+		querySnapshot.forEach((doc) => {
+			docs.push({...doc.data(), id: doc.id})
+		});
+		console.log(docs);
+	}
+
+	useEffect(() => {
+		getAlbums();
+	}, []);
+
 	return (
 		<CartProvider>
 			<Router>
@@ -27,6 +48,9 @@ function App() {
 					</div>
 					<div className='main-container'>
 						<Routes>
+							{/* {albumData.map((albun) => {
+								return <Route path="/" element={<Home data={albun} />} />
+							})} */}
 							<Route path="/" element={<Home />} />
 							<Route path="/nosotros" element={<Nosotros />} />
 							<Route path="/contacto" element={<Contacto />} />

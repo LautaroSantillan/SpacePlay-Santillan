@@ -12,7 +12,7 @@ export const productosList = [ //Array de los productos
         "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/348013-1200-auto?v=637363630148730000&width=1200&height=auto&aspect=true",
         "category": "consola",
         "stock": 10,
-        "initial": 0
+        "initial": 1
     },
     {
         "id": 2,
@@ -27,7 +27,7 @@ export const productosList = [ //Array de los productos
         "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/348026-1200-auto?v=637363644949470000&width=1200&height=auto&aspect=true",
         "category": "joysticks",
         "stock": 10,
-        "initial": 0
+        "initial": 1
     },
     {
         "id": 3,
@@ -42,7 +42,7 @@ export const productosList = [ //Array de los productos
         "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/357093-1200-auto?v=637607230445800000&width=1200&height=auto&aspect=true",
         "category": "joysticks",
         "stock": 10,
-        "initial": 0
+        "initial": 1
     },
     {
         "id": 4,
@@ -57,7 +57,7 @@ export const productosList = [ //Array de los productos
         "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/348063-1200-auto?v=637363806239870000&width=1200&height=auto&aspect=true",
         "category": "accesorios",
         "stock": 10,
-        "initial": 0
+        "initial": 1
     },
     {
         "id": 5,
@@ -72,7 +72,7 @@ export const productosList = [ //Array de los productos
         "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/348032-1200-auto?v=637363675954530000&width=1200&height=auto&aspect=true",
         "category": "accesorios",
         "stock": 10,
-        "initial": 0
+        "initial": 1
     },
     {
         "id": 6,
@@ -87,7 +87,7 @@ export const productosList = [ //Array de los productos
         "pictureUrl3": "https://arsonyb2c.vtexassets.com/arquivos/ids/359240-1200-auto?v=637834738013330000&width=1200&height=auto&aspect=true",
         "category": "accesorios",
         "stock": 10,
-        "initial": 0
+        "initial": 1
     }
 ]
 //Obtener ID de los productos 

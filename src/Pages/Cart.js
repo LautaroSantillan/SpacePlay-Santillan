@@ -6,14 +6,14 @@ import "./Cart.css";
 import { CartContext } from "../Context/CartContext";
 //React-Router-DOM
 import { NavLink } from "react-router-dom";
-
+//DEVELOPING
 const Cart = () => {
     const [priceTot, setPriceTot] = useState(0);   
     const [cart, setCart] = useState([]);
 
     const {items, removeItem, clear} = useContext(CartContext)
 
-    const handlePrice = () => {
+    const handlePrice = () => { //Sacar el precio total
         let total = 0;
         items.map((item) => (total += item.qty * item.price));
         setPriceTot(total);
@@ -23,7 +23,7 @@ const Cart = () => {
         handlePrice();
     });
 
-    const handleChange = (item, d) => {
+    const handleChange = (item, d) => { //Sumar y Restar productos
         const ind = items.indexOf(item);
         const arry = items;
         arry[ind].qty += d;
