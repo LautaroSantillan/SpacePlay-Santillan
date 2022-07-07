@@ -1,4 +1,7 @@
-import React, { createContext, useState } from 'react'
+//IMPORTS
+import React, { createContext, useState } from 'react';
+//Sweet Alert
+import swal from 'sweetalert';
 
 export const CartContext = createContext([])
 
@@ -27,7 +30,13 @@ export default function CartProvider({ children }) {
     }
     //Vaciar Carrito
     const clear = () => {
-        setItems([])
+        setItems([]);
+        swal({
+            title: "CARRITO VACIADO!!!",
+            text: "Usted acaba de vaciar el carrito de compra",
+            icon: "info",
+            button: "Continuar"
+        })
     }
 
     return (

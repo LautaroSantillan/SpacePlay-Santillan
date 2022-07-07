@@ -1,0 +1,117 @@
+.cartcontainer {
+    width: 65%;
+    margin: auto;
+}
+
+.cart-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    border-bottom: 2px solid skyblue;
+    padding-bottom: 20px;
+}
+
+.cart-titulo{
+    text-transform: uppercase;
+    font-style: italic;
+    text-align: left;
+}
+
+.cart-box img {
+    width: 70px;
+    height: 70px;
+}
+
+.cart-item {
+    display: flex;
+    width: 500px;
+    align-items: center;
+}
+
+.cart-item p {
+    font-weight: bold;
+    margin: 10px;
+}
+
+.cart-box div:nth-child(2) button {
+    padding: 5px 10px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.cart-box div:nth-child(3) button {
+    padding: 5px 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: skyblue;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-box div:nth-child(3) button:hover {
+    background-color: deepskyblue;
+}
+
+.cart-box div:nth-child(3) span {
+    background-color: lightgreen;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total span:nth-child(1) {
+    font-size: 2rem;
+    color: skyblue;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.total span:nth-child(2) {
+    font-size: 2rem;
+    color: green;
+    font-weight: bold;
+}
+
+.action{
+    display: flex;
+    font-size: 2rem;
+    font-weight: bolder;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.btnCart{
+    padding: 0.4rem;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    transition: all .5s;
+    margin: 5px 10px 25px 10px;
+}
+
+.btnCart:hover{
+    background-color: #dee1df;
+    border-color: #8de6e6;
+    color: #ecdcbe;
+    outline: black;
+}
+
+.btn-red{
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-green{
+    background-color: #28a745;
+    border-color: #28a745;
+}

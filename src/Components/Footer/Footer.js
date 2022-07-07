@@ -32,7 +32,7 @@ function Footer() {
                     </li>            
                 </div>
                 <div className="copyright">
-                    <small>&copy; 2022 <b>TRAGOMANIA</b> - Todos los Derechos Reservados.</small>
+                    <small>&copy; 2022 <b>SPACEPLAY</b> - Todos los Derechos Reservados.</small>
                 </div>
         </div>
     )
