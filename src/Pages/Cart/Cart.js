@@ -1,44 +1,47 @@
 //IMPORTS
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 //Estilos
 import "./Cart.css";
 //Context
-import { CartContext } from "../Context/CartContext";
+import { CartContext } from "../../Context/CartContext";
 //React-Router-DOM
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 //DEVELOPING
 const Cart = () => {
-    const [priceTot, setPriceTot] = useState(0);   
-    const [cart, setCart] = useState([]);
-
-    const {items, removeItem, clear} = useContext(CartContext)
-
-    const handlePrice = () => { //Sacar el precio total
+    const { items, removeItem, clear, addItem } = useContext(CartContext)
+    //Sacar el precio total
+    const handlePrice = () => { 
         let total = 0;
         items.map((item) => (total += item.qty * item.price));
-        setPriceTot(total);
+        return total;
     };
-    
-    useEffect(() => {
-        handlePrice();
-    });
-
-    const handleChange = (item, d) => { //Sumar y Restar productos
-        const ind = items.indexOf(item);
-        const arry = items;
-        arry[ind].qty += d;
-    
-        if (arry[ind].qty === 0 && arry[ind].qty < 10) 
-            arry[ind].qty = 1;
-            setCart([...arry]);
+    //Sumar y Restar productos
+    const handleChange = (item, d) => { 
+        if(item.qty >= 0 && item.qty < 10)
+        {
+            addItem({id: item.id}, d);
+        }        
     };
-    
+    //Estilo en linea
     const styles = {
         div:{
             paddingTop: 130
         }
     }
-
+    //Verificar si el carrito esta vacio
+    if(items.length === 0){
+        return(
+            <div className="cartnull" style={styles.div}>
+                <h2>Su carrito esta vacio</h2>
+                <img src="https://thumbs.dreamstime.com/b/hombre-d-con-la-carretilla-del-carro-de-la-compra-57785129.jpg" alt="carritoVacio" />
+                <br></br>
+                <Link to="/">
+                    Volver al HOME
+                </Link>
+            </div>
+        )
+    }
+    //Si el carrito contiene productos
     return (
         <div className="cartcontainer" style={styles.div}>
             <h2 className="cart-titulo">CARRITO</h2>
@@ -65,15 +68,15 @@ const Cart = () => {
             }
             <div className="total">
                 <span>Precio Total de su CARRITO:</span>
-                <span>${priceTot}</span>
+                <span>${handlePrice()}</span>
             </div>
             <div className="action">
                 <span>Ultimas Acciones:</span>
                 <div>
                     <button className="btn-red btnCart" onClick={() => clear()}>Vaciar el Carrito</button>
-                    <NavLink to="/finishcart">
+                    <Link to="/shop">
                         <button className="btn-green btnCart">Terminar la Compra</button>
-                    </NavLink>
+                    </Link>
                 </div>
             </div>
         </div>

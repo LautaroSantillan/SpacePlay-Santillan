@@ -146,7 +146,7 @@
       flex-wrap: nowrap;
 }
 
-.navbar li {
+.navbar a {
   color: black;
   position: relative;
   letter-spacing: 0.125rem;
@@ -156,7 +156,7 @@
   transition: all .5s;
 }
 
-.navbar li:hover {
+.navbar a:hover {
   background: #87acc7;
   color: white !important;
 }

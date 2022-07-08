@@ -1,6 +1,8 @@
 //IMPORTS
 import React from 'react';
-import logo from '../../images/logoCirc.png';
+//Logotipo
+import logo from '../../Images/logoCirc.png';
+//Iconos
 import { FaWhatsapp } from 'react-icons/fa';
 import { FaFacebook } from 'react-icons/fa';
 import { FaInstagram } from 'react-icons/fa';
@@ -8,7 +10,7 @@ import { FaInstagram } from 'react-icons/fa';
 import "./Footer.css";
 //React-Router-DOM
 import { Link } from "react-router-dom";
-
+//DEVELOPING
 function Footer() {
     return (
         <div className="footer">

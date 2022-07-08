@@ -1,5 +1,7 @@
+//IMPORTS
+//Sweet Alert
 import swal from 'sweetalert';
-
+//DEVELOPING
 const Nosotros = () => {
     const MostrarAlerta=()=>{
         swal({
@@ -9,7 +11,7 @@ const Nosotros = () => {
             button: "Continuar"
         })
     }
-
+    //Estilo en linea
     const styles = {
         div:{
             paddingTop: 150

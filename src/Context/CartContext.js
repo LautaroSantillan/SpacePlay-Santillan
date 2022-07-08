@@ -2,9 +2,9 @@
 import React, { createContext, useState } from 'react';
 //Sweet Alert
 import swal from 'sweetalert';
-
+//Exportar el Context
 export const CartContext = createContext([])
-
+//Exportar el Provider
 export default function CartProvider({ children }) {
     const [items, setItems] = useState([])  
     //Fijar si existe X producto
@@ -12,7 +12,7 @@ export default function CartProvider({ children }) {
         const find = items.find(item => item.id === id);
         return find;
     }
-    //Agregar Producto
+    //Agregar o Eliminar Producto
     const addItem = (item, qty) => {
         isInCart(item.id) ?
                         setItems(items.map((prod) => {
@@ -40,8 +40,8 @@ export default function CartProvider({ children }) {
     }
 
     return (
-        <CartContext.Provider value={{items, addItem, removeItem, clear, isInCart}}>
-            {children}
+        <CartContext.Provider value={{ items, addItem, removeItem, clear, isInCart }}>
+            { children }
         </CartContext.Provider>
     )
 

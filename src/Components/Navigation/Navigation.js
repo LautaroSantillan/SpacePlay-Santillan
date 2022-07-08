@@ -1,10 +1,15 @@
+//IMPORTS
+//Estilos
 import "./Navigation.css";
-import logo from '../../images/logoCirc.png';
+//Logotipo
+import logo from '../../Images/logoCirc.png';
+//Carrito
 import CartWidget from "../CartWidget/CartWidget";
+//Icono
 import { GiHamburgerMenu } from 'react-icons/gi';
 //React-Router-DOM
 import { Link } from "react-router-dom";
-
+//DEVELOPING
 const Navigation = () => {
     return (
         <div className="header">
@@ -18,15 +23,15 @@ const Navigation = () => {
                 </label>
                 <input type="checkbox" id="menu"/>
                 <ul className="navbar nav-animaciones">
-                    <li><Link to="/" className="Li">
+                    <Link to="/" className="Li">
                         INICIO
-                    </Link></li>
-                    <li><Link to="/nosotros" className="Li">
+                    </Link>
+                    <Link to="/nosotros" className="Li">
                         NOSOTROS
-                    </Link></li>
-                    <li><Link to="/contacto" className="Li">
+                    </Link>
+                    <Link to="/contacto" className="Li">
                         CONTACTO
-                    </Link></li>
+                    </Link>
                 </ul>
             </nav>
             <CartWidget />

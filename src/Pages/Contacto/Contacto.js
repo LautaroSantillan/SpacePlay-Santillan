@@ -1,15 +1,17 @@
+//IMPORT
+//Sweet Alert
 import swal from 'sweetalert';
-
-const Error = () => {
+//DEVELOPING
+const Contacto = () => {
     const MostrarAlerta=()=>{
         swal({
             title: "ATENCIÓN!!!",
             text: "Usted ha ingresado a una página en construccion...",
-            icon: "error",
+            icon: "warning",
             button: "Continuar"
         })
     }
-
+    //Estilos en linea
     const styles = {
         div:{
             paddingTop: 150
@@ -23,4 +25,4 @@ const Error = () => {
     );
 };
 
-export default Error;
+export default Contacto;

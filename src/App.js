@@ -1,5 +1,5 @@
 //IMPORTS
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 //Estilos
 import './App.css';
 //Componentes
@@ -13,31 +13,31 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 //Context
 import CartProvider from './Context/CartContext';
 // Pages
-import Home from "./Pages/Home";
-import Contacto from "./Pages/Contacto";
-import Nosotros from "./Pages/Nosotros";
-import Cart from "./Pages/Cart";
-import Error from "./Pages/Error"; 
+import Home from "./Pages/Home/Home";
+import Contacto from "./Pages/Contacto/Contacto";
+import Nosotros from "./Pages/Nosotros/Nosotros";
+import Cart from "./Pages/Cart/Cart";
+import Error from "./Pages/Error/Error"; 
 //Firebase
-import { db } from "./Firebase/firebaseConfig";
-import { collection, query, getDocs, getDoc } from "firebase/firestore";
+// import { db } from "./Firebase/firebaseConfig";
+// import { collection, query, getDocs, getDoc } from "firebase/firestore";
 //DEVELOPING
 const App = () => {
-	const [albumData, setAlbumData] = useState([]);
+	// const [albumData, setAlbumData] = useState([]);
 
-	const getAlbums = async () => {
-		const q = query(collection(db, "playstation"));
-		const querySnapshot = await getDocs(q);
-		const docs = [];
-		querySnapshot.forEach((doc) => {
-			docs.push({...doc.data(), id: doc.id})
-		});
-		console.log(docs);
-	}
+	// const getAlbums = async () => {
+	// 	const q = query(collection(db, "playstation"));
+	// 	const querySnapshot = await getDocs(q);
+	// 	const docs = [];
+	// 	querySnapshot.forEach((doc) => {
+	// 		docs.push({...doc.data(), id: doc.id})
+	// 	});
+	// 	console.log(docs);
+	// }
 
-	useEffect(() => {
-		getAlbums();
-	}, []);
+	// useEffect(() => {
+	// 	getAlbums();
+	// }, []);
 
 	return (
 		<CartProvider>
@@ -48,9 +48,6 @@ const App = () => {
 					</div>
 					<div className='main-container'>
 						<Routes>
-							{/* {albumData.map((albun) => {
-								return <Route path="/" element={<Home data={albun} />} />
-							})} */}
 							<Route path="/" element={<Home />} />
 							<Route path="/nosotros" element={<Nosotros />} />
 							<Route path="/contacto" element={<Contacto />} />
