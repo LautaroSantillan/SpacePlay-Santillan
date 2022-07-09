@@ -1,35 +1,35 @@
 //IMPORTS
 import React, { useState, useEffect } from 'react';
-import axios from "axios";
 //Componente
 import ItemList from "../ItemList/ItemList"; 
-//React-Router-DOM
-import { useParams } from 'react-router-dom';
-
+//Firebase-Firestone
+import { db } from "../../Firebase/firebaseConfig";
+import { collection, query, getDocs } from "firebase/firestore";
+//DEVELOPING
 const ItemListContainer = () => {
-	const [articles, setArticles] = useState([]);
+    const [albumsData, setAlbumsData] = useState([]);
 
-    const { category } = useParams();
+    //Obtener la coleccion de productos
+	const getAlbums = async () => {
+		const q = query(collection(db, "playstation"));
+		const querySnapshot = await getDocs(q);
+		const docs = [];
+		querySnapshot.forEach((doc) => {
+			docs.push({...doc.data(), id: doc.id})
+		});
+		setAlbumsData(docs);
+	}
+    
+    //Setear
+	useEffect(() => {
+		getAlbums();
+	}, []);
 
-	// useEffect(() => {
-    //     axios(`https://62aa950c371180affbd78121.mockapi.io/api/prod-ps5/articulos`).then((res) =>
-    //         setArticles(res.data),
-    //     );
-    // }, []);
-
-    useEffect(() => {
-        axios(`https://62aa950c371180affbd78121.mockapi.io/api/prod-ps5/articulos`).then((res) => {
-        const productos = res.data ? res.data.filter(unItem => unItem.categoria === category) : res.data
-        setArticles(productos);
-        });
-    }, [category]);
-
-	console.log('Productos:', articles);
-
+    console.log('Productos:', albumsData);
 
 	return (
-        <div key={articles.category}>
-            <ItemList articles={articles}/>
+        <div key={albumsData.category}>
+            <ItemList articles={albumsData}/>
         </div>
 	);
 

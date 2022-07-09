@@ -1,5 +1,5 @@
 //IMPORTS
-import { useContext, /*useState*/ } from "react";
+import { useContext } from "react";
 //Componentes
 import ItemCount from "../ItemCount/ItemCount";
 //Estilos
@@ -8,10 +8,8 @@ import "./ItemDetail.css";
 import { NavLink } from "react-router-dom";
 //Context
 import { CartContext } from "../../Context/CartContext";
-
+//DEVELOPING
 const ItemDetail = ({ product }) => {
-    // const[add, setAdd] = useState();
-
     const {addItem, isInCart} = useContext(CartContext)
 
     return (

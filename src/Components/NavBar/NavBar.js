@@ -3,22 +3,22 @@ import React from 'react';
 //Estilos
 import "./NavBar.css";
 //React-Router-DOM
-import { NavLink } from "react-router-dom";
-
+import { Link } from "react-router-dom";
+//DEVELOPING
 const NavBar = () => {
     return (
         <div className='navbar-category'>
             <nav>
                 <ul className="NavBar">
-                    <NavLink to={`/category/CONSOLAS`} className="li">
-                        CONSOLAS
-                    </NavLink>
-                    <NavLink to={`/category/JOYSTICKS`} className="li">
+                    <Link to='/category/consola' className="li">
+                        CONSOLA
+                    </Link>
+                    <Link to='/category/joysticks' className="li">
                         JOYSTICKS
-                    </NavLink>
-                    <NavLink to={`/category/ACCESORIOS`} className="li">
+                    </Link>
+                    <Link to='/category/accesorios' className="li">
                         ACCESORIOS
-                    </NavLink>
+                    </Link>
                 </ul>
             </nav>
         </div>

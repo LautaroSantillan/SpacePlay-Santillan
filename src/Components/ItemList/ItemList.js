@@ -1,7 +1,9 @@
 //IMPORTS
+//Estilos
 import Item from '../Item/Item';
-
-const ItemList = ({articles}) => {
+//DEVELOPING
+const ItemList = ({ articles }) => {
+	//Estilos en linea
 	const styles = {
 		cards: {
 			padding: 10,
