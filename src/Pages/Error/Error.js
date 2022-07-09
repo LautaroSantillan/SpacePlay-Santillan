@@ -1,26 +1,18 @@
 //IMPORTS
-//Sweet Alert
-import swal from 'sweetalert';
+//Estilos
+import "./Error.css";
+//React-Router-DOM
+import { Link } from 'react-router-dom';
 //DEVELOPING
-const Error = () => {
-    const MostrarAlerta=()=>{
-        swal({
-            title: "ATENCIÓN!!!",
-            text: "Usted ha ingresado a una página en construccion...",
-            icon: "error",
-            button: "Continuar"
-        })
-    }   
-    //Estilos en linea
-    const styles = {
-        div:{
-            paddingTop: 150
-        }
-    }
-
+const Error = () => { 
     return (
-    <div style={styles.div}>
-        <button onClick={()=>MostrarAlerta()}>PRESIONE</button>
+    <div className="containerError">
+        <h2>PÁGINA NO ENCONTRADA:</h2>
+        <img src="https://lobosuelto.com/wp-content/uploads/2018/04/error-404.png" alt="error404" />
+        <br></br>
+        <Link className="btnError" to="/">
+            Volver al Home
+        </Link>
     </div>
     );
 };
