@@ -51,7 +51,11 @@ const CategoryType = () => {
 				</div>
 			) : (
 				albumData.map((data) => {
-					return <Item data={data} />;
+					return (
+						<div key={albumData.id}>
+                            <Item data={data} />
+                        </div>
+					);
 				})
 			)}
 		</div>

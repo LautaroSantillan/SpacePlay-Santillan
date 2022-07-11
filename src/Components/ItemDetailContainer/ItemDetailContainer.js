@@ -49,7 +49,11 @@ const ItemDetailContainer = () => {
                 </div>
             ) : (
                 albumData.map((data) => {
-                    return <ItemDetail product={data} />;
+                    return (
+                        <div key={albumData.id}>
+                            <ItemDetail product={data} />
+                        </div>
+                    ); 
                 })
             )
             }
