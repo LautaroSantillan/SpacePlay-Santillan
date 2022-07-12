@@ -1,5 +1,7 @@
 //IMPORTS
 import React, { useState, useEffect } from 'react';
+//Estilos
+import "./CategoryType.css";
 //React-Router-DOM
 import { useParams } from 'react-router-dom';
 //Componentes
@@ -33,18 +35,8 @@ const CategoryType = () => {
 		}, 500);
 	}, [category]);
 
-    //Estilos en linea
-    const styles = {
-        div:{
-            paddingTop: 120,
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center"
-        }
-    }
-
 	return (
-		<div style={styles.div}>
+		<div className='categorytype-container'>
 			{isLoading ? (
 				<div className='Spinner'>
 					<Spinner />

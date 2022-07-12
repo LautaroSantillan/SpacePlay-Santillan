@@ -95,4 +95,10 @@
     .galeriaUs{
         flex-direction: column;
     }
+    .tituloUs{
+        font-size: 1.5rem;
+    }
+    .galeriaP {
+        padding: 1rem;
+    }
 }

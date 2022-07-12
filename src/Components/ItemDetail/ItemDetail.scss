@@ -10,7 +10,6 @@
 }
 
 .detailContainer-descriptions{
-    // margin: 20px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 600;
     h2{
@@ -34,5 +33,6 @@
 @media screen and (max-width: 768px){
     .detailContainer{
         flex-wrap: wrap;
+        margin: 25px;
     }
 }

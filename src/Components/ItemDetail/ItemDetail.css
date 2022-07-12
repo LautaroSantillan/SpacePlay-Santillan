@@ -44,6 +44,7 @@
   .detailContainer {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    margin: 25px;
   }
 }
 /*# sourceMappingURL=ItemDetail.css.map */

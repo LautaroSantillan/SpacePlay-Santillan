@@ -145,3 +145,15 @@
     background-color: #28a745;
     border-color: #28a745;
 }
+
+@media only screen and (max-width: 768px){
+    .cartcontainer {
+        width: 100%;
+    }
+    .cart-item {
+        width: auto;
+    }
+    .total {
+        display: block;
+    }
+}

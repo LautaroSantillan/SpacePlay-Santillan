@@ -3,7 +3,6 @@
 import './App.css';
 //Componentes
 import Navigation from "./Components/Navigation/Navigation";
-//import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import Footer from './Components/Footer/Footer';
 //React-Router-DOM
@@ -12,10 +11,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import CartProvider from './Context/CartContext';
 // Pages
 import Home from "./Pages/Home/Home";
-import Contacto from "./Pages/Contacto/Contacto";
 import Nosotros from "./Pages/Nosotros/Nosotros";
-import Cart from "./Pages/Cart/Cart";
+import Contacto from "./Pages/Contacto/Contacto";
 import CategoryType from "./Pages/CategoryType/CategoryType";
+import Cart from "./Pages/Cart/Cart";
+import Shop from "./Pages/Shop/Shop";
 import Error from "./Pages/Error/Error"; 
 //DEVELOPING
 const App = () => {
@@ -34,6 +34,7 @@ const App = () => {
 							<Route path="/category/:category" element={<CategoryType/>} />
 							<Route path="/item/:id" element={<ItemDetailContainer />} />
 							<Route path="/cart" element={<Cart />} />
+							<Route path="/shop" element={<Shop />} />
 							<Route path="*" element={<Error />} />
 						</Routes>
 					</div>

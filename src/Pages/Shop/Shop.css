@@ -1,0 +1,75 @@
+/*TITULO*/
+.title-shop span{
+    font-weight: bolder;
+    text-decoration: underline;
+    color: skyblue !important;
+}
+
+/*FORMULARIO*/
+.form-shop{
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 250px;
+}
+
+/*CONTENEDOR DE LOS PRODUCTOS*/
+.items-shop h4{
+    font-size: 30px;
+    text-align: left;
+    margin: 20px;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.item-shop-header, .items-shop-item{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    width: 65%;
+}
+
+.item-shop-header{
+    font-weight: bolder;
+    border-bottom: 2px solid skyblue;
+}
+
+.borderHeader{
+    border-right: 2px solid black;
+}
+
+.item-shop--product{
+    width: 100%;
+}
+
+/*MEDIA QUERIES*/
+@media only screen and (max-width: 992px){
+    .item-shop-header, .items-shop-item{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .items-shop-item, .item-shop-header{
+        font-size: smaller;
+        margin-top: 5px;
+        margin-left: 0px;
+        justify-content: center;
+    }
+    .item-shop--product{
+        display: inline-block;
+        margin-left: 5px;
+        padding-right: 5px;
+        width: auto;
+    }
+    .items-shop h4{
+        text-align: center;
+    }
+    .form-shop{
+        margin: 5px 75px;
+    }
+}
