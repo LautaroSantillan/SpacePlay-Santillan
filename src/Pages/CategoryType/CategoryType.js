@@ -16,7 +16,7 @@ const CategoryType = () => {
 	console.log(albumData);
 
 	const { category } = useParams();
-
+	//Obtener los category de Firebase
 	useEffect(() => {
 		const getAlbums = async () => {
 			const q = query(collection(db, 'playstation'), where('category', '==', category));

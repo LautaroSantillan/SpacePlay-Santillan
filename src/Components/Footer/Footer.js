@@ -18,19 +18,19 @@ function Footer() {
                     <Link to="/">
                         <img src={logo} alt="iconoTienda" width={50}/>
                     </Link> 
-                    <Link to="/"><FaWhatsapp className='icon'/></Link>
-                    <Link to="/"><FaFacebook className='icon'/></Link>
-                    <Link to="/"><FaInstagram className='icon'/></Link>               
+                    <Link to="/contacto"><FaWhatsapp className='icon'/></Link>
+                    <Link to="/contacto"><FaFacebook className='icon'/></Link>
+                    <Link to="/contacto"><FaInstagram className='icon'/></Link>               
                 </div>
                 <div className="navbar-footer">
                     <li>
                         <Link to="/">INICIO</Link>
                     </li>
                     <li>
-                        <Link to="/Nosotros">NOSOTROS</Link>
+                        <Link to="/nosotros">NOSOTROS</Link>
                     </li>
                     <li>
-                        <Link to="/Contacto">CONTACTO</Link>
+                        <Link to="/contacto">CONTACTO</Link>
                     </li>            
                 </div>
                 <div className="copyright">
