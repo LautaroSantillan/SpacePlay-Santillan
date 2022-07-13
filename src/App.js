@@ -12,7 +12,6 @@ import CartProvider from './Context/CartContext';
 // Pages
 import Home from "./Pages/Home/Home";
 import Nosotros from "./Pages/Nosotros/Nosotros";
-import Contacto from "./Pages/Contacto/Contacto";
 import CategoryType from "./Pages/CategoryType/CategoryType";
 import Cart from "./Pages/Cart/Cart";
 import Shop from "./Pages/Shop/Shop";
@@ -30,7 +29,6 @@ const App = () => {
 						<Routes>
 							<Route path="/" element={<Home />} />
 							<Route path="/nosotros" element={<Nosotros />} />
-							<Route path="/contacto" element={<Contacto />} />
 							<Route path="/category/:category" element={<CategoryType/>} />
 							<Route path="/item/:id" element={<ItemDetailContainer />} />
 							<Route path="/cart" element={<Cart />} />

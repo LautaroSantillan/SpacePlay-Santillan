@@ -29,9 +29,6 @@ const Navigation = () => {
                     <Link to="/nosotros" className="Li">
                         NOSOTROS
                     </Link>
-                    <Link to="/contacto" className="Li">
-                        CONTACTO
-                    </Link>
                 </ul>
             </nav>
             <CartWidget />
