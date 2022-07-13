@@ -21,13 +21,24 @@
 .social a:hover {
   opacity: 1;
   border-radius: 1rem 1rem 1rem 1rem;
-  background-color: #87acc7;
-  border: 1px solid black;
+  border: 1px solid skyblue;
 }
 
 .icon {
   width: 35px;
   height: 35px;
+}
+
+.whatsapp:hover {
+  background-color: #4dc247;
+}
+
+.linkedin:hover {
+  background-color: #0e76a8;
+}
+
+.instagram:hover {
+  background-color: #e4405f;
 }
 
 .navbar-footer {
