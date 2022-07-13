@@ -6,12 +6,49 @@
 }
 
 /*FORMULARIO*/
-.form-shop{
+.formulario {
+    margin-top: 1.25rem;
+    border-radius: 1.25rem;
     border: 1px solid black;
+}
+
+.formulario h2 {
+    color: black;
+    text-align: center;
+}
+
+input, textarea {
+    width: 100%;
+    margin-bottom: 1.25rem;
+    padding: 0.625rem;
+}
+
+input {
+    border: none;
+}
+
+textarea {
+    min-height: 9.375rem;
+    max-height: 9.375rem;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.btns-form{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 15px 250px;
+    gap: 20px;
+}
+
+.btn-form {
+    background: skyblue;
+    color: black;
+}
+
+.btn-form:hover {
+    cursor: pointer;
+    transform: translateY(-0.313rem) scale(1.01);
+    transition: all 0.5s ease;
+    font-weight: 500;
 }
 
 /*CONTENEDOR DE LOS PRODUCTOS*/
