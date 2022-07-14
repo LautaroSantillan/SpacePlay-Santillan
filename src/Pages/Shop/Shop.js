@@ -20,6 +20,7 @@ const Shop = () => {
         return total;
     };
 
+    //Inicializar el estado de Comprador
     const initialBuyer = {
         name: '',
         lastName: '',
@@ -33,11 +34,14 @@ const Shop = () => {
 
     const [purchaseID, setPurchaseID] = useState("");
 
+    //Tomar los datos del formulario y setearlos en el estado
     const handleOnChange = (e) => {
         const { value, name } = e.target;
         setValues({ ...values, [name]: value });
     };
 
+
+    //Mandar los datos a Firebase y que este devuelva el ID del documento
     const onSubmit = async (e) => {
         e.preventDefault();
         console.log(values);
@@ -47,6 +51,11 @@ const Shop = () => {
         console.log("Documento escrito con ID:", docRef.id);
         setPurchaseID(docRef.id);
         setBuyer(values);
+        setValues(initialBuyer);
+    };
+
+    //Resetear el formulario
+    const onReset = () => {
         setValues(initialBuyer);
     };
 
@@ -66,10 +75,10 @@ const Shop = () => {
                     <div className="mb-3">
                         <h2>Formulario de Pago</h2>
                     </div>
-                    <form action="" onSubmit={onSubmit}>
+                    <form action="" onSubmit={onSubmit} onReset={onReset}>
                         <div className="row">
                             <div className="col">
-                                <label for="nombre" className="form-label">Nombre</label>
+                                <label htmlFor="nombre" className="form-label">Nombre</label>
                                 <input type="text" 
                                 className="form-control" 
                                 name="name" 
@@ -80,7 +89,7 @@ const Shop = () => {
                                 required/>
                             </div>
                             <div className="col">
-                                <label for="apellido" className="form-label">Apellido</label>
+                                <label htmlFor="apellido" className="form-label">Apellido</label>
                                 <input type="text" 
                                 className="form-control" 
                                 name="lastName" 
@@ -92,7 +101,7 @@ const Shop = () => {
                             </div>
                         </div>
                         <div className="mb-2">
-                            <label for="numero" className="form-label">Numero Telefonico</label>
+                            <label htmlFor="numero" className="form-label">Numero Telefonico</label>
                             <input type="number" 
                             className="form-control" 
                             name="number" placeholder="" 
@@ -101,7 +110,7 @@ const Shop = () => {
                             required />
                         </div>
                         <div className="mb-2">
-                            <label for="correo" className="form-label">Correo electronico</label>
+                            <label htmlFor="correo" className="form-label">Correo electronico</label>
                             <input type="text" 
                             className="form-control" 
                             name="email" 
@@ -112,7 +121,7 @@ const Shop = () => {
                         </div>
                         <div className="mb-2 btns-form">
                             <input type="submit" value="REALIZAR COMPRA" className="btn-form" />
-                            <input type="reset" value="BORRAR" className="btn-form" />
+                            <input type="reset" value="BORRAR" className="btn-form"/>
                         </div>
                     </form>
                     {purchaseID && <ShopMessage purchaseID={purchaseID} buyer={{...buyer}} /*nameBuyer={values.name} lastNameBuyer={values.lastName} emailBuyer={values.email}*/ />}

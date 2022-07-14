@@ -13,11 +13,13 @@ import { collection, query, getDocs, where } from "firebase/firestore";
 //DEVELOPING
 const CategoryType = () => {
 	const [albumData, setAlbumData] = useState([]);
+	
 	const [isLoading, setIsLoading] = useState(true);
 
 	console.log(albumData);
 
 	const { category } = useParams();
+	
 	//Obtener los category de Firebase
 	useEffect(() => {
 		const getAlbums = async () => {
@@ -44,7 +46,7 @@ const CategoryType = () => {
 			) : (
 				albumData.map((data) => {
 					return (
-						<div key={albumData.id}>
+						<div key={albumData.category}>
                             <Item data={data} />
                         </div>
 					);

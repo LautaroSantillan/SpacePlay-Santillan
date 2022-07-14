@@ -18,17 +18,17 @@ const ItemListContainer = () => {
 			docs.push({...doc.data(), id: doc.id})
 		});
 		setAlbumsData(docs);
-	}
+	};
     
     //Setear
 	useEffect(() => {
 		getAlbums();
 	}, []);
 
-    console.log('Productos:', albumsData);
+    console.log('Listado de Productos:', albumsData);
 
 	return (
-        <div key={albumsData.category}>
+        <div key={albumsData.id}>
             <ItemList articles={albumsData}/>
         </div>
 	);

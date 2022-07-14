@@ -5,7 +5,7 @@
     align-items: center;
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 992px){
     .categorytype-container{
         flex-flow: column;
     }

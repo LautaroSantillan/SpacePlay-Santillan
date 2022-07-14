@@ -32,7 +32,7 @@ const ItemDetailContainer = () => {
         }, 1000);
     }, [id]);
 
-    console.log("Product:", albumData);
+    console.log("Producto Unitario:", albumData);
 
     //Estilos en linea
     const styles = {
@@ -50,7 +50,7 @@ const ItemDetailContainer = () => {
             ) : (
                 albumData.map((data) => {
                     return (
-                        <div key={albumData.id}>
+                        <div key={data.id}>
                             <ItemDetail product={data} />
                         </div>
                     ); 
