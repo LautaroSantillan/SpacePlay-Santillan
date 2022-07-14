@@ -40,18 +40,52 @@ const Shop = () => {
         setValues({ ...values, [name]: value });
     };
 
-
     //Mandar los datos a Firebase y que este devuelva el ID del documento
     const onSubmit = async (e) => {
         e.preventDefault();
         console.log(values);
-        const docRef = await addDoc(collection(db,'shopping'), {
-            values,
+
+        //Creación del objeto con los items comprados
+        let itemsObj = items.map((item) => {
+            return {
+                id: item.id,
+                title: item.title,
+                quantity: item.qty,
+                price: item.price,
+            };
         });
-        console.log("Documento escrito con ID:", docRef.id);
-        setPurchaseID(docRef.id);
-        setBuyer(values);
-        setValues(initialBuyer);
+
+        //Obtener el date
+        const transformarFecha = (fechaStamp) => {
+            let dia = fechaStamp.toDate().getDate();
+            let mes = fechaStamp.toDate().getMonth();
+            let anio = fechaStamp.toDate().getFullYear();
+            if(dia < 10){
+                dia = "0" + dia;
+            }
+            if(mes < 10){
+                mes = "0" + mes; 
+            }
+            console.log(transformarFecha);
+            return dia + "/" + mes + "/" + anio;
+        }
+
+        //Creación del objeto que se va a mandar a Firebase
+        const newShopping ={
+            buyer: buyer,
+            items: itemsObj,
+            date: transformarFecha(new Date()),
+            total: handlePrice(),
+        }
+
+        //Mandar los datos contra Firebase
+        const docRef = await addDoc(collection(db,'shopping'), {
+            newShopping,
+        });
+        console.log("Documento escrito con ID:", docRef.id); //Id de orden autogenerada
+        setPurchaseID(docRef.id);//Guardar el ID de la orden
+        setBuyer(values);//Guardar los datos del funcionario para mostrarlos en el ShopMessage
+        setValues(initialBuyer);//Inicializar nuevamente el formulario
     };
 
     //Resetear el formulario
