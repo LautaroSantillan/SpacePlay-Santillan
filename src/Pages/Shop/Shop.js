@@ -1,9 +1,14 @@
 //IMPORTS
-import { useContext } from "react";
+import { useContext, useState } from "react";
 //Estilos
 import "./Shop.css";
+//Componente
+import ShopMessage from "../../Components/ShopMessage/ShopMessage";
 //Context
 import { CartContext } from "../../Context/CartContext";
+// Firebase
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../Firebase/firebaseConfig";
 //DEVELOPING
 const Shop = () => {
     const { items } = useContext(CartContext);
@@ -15,12 +20,43 @@ const Shop = () => {
         return total;
     };
 
+    const initialBuyer = {
+        name: '',
+        lastName: '',
+        number: '',
+        email: '',
+    };
+
+    const [values, setValues] = useState(initialBuyer);
+
+    const [buyer, setBuyer] = useState(initialBuyer);
+
+    const [purchaseID, setPurchaseID] = useState("");
+
+    const handleOnChange = (e) => {
+        const { value, name } = e.target;
+        setValues({ ...values, [name]: value });
+    };
+
+    const onSubmit = async (e) => {
+        e.preventDefault();
+        console.log(values);
+        const docRef = await addDoc(collection(db,'shopping'), {
+            values,
+        });
+        console.log("Documento escrito con ID:", docRef.id);
+        setPurchaseID(docRef.id);
+        setBuyer(values);
+        setValues(initialBuyer);
+    };
+
     //Estilo en linea
     const styles = {
         div:{
             paddingTop: 130
         }
-    }
+    };
+
     return(
         <div style={styles.div}>
             <h2 className="title-shop"><span>PARA FINALIZAR SU COMPRA:</span> Ingrese sus datos personales en el formulario</h2>
@@ -30,34 +66,56 @@ const Shop = () => {
                     <div className="mb-3">
                         <h2>Formulario de Pago</h2>
                     </div>
-                    <form action="">
+                    <form action="" onSubmit={onSubmit}>
                         <div className="row">
                             <div className="col">
                                 <label for="nombre" className="form-label">Nombre</label>
-                                <input type="text" className="form-control" placeholder="Ejemplo: Lautaro" aria-label="First name" required/>
+                                <input type="text" 
+                                className="form-control" 
+                                name="name" 
+                                placeholder="Ejemplo: Lautaro" 
+                                aria-label="First name" 
+                                value={values.name} 
+                                onChange={handleOnChange} 
+                                required/>
                             </div>
                             <div className="col">
                                 <label for="apellido" className="form-label">Apellido</label>
-                                <input type="text" className="form-control" placeholder="Ejemplo: Santillan" aria-label="Last name" required/>
+                                <input type="text" 
+                                className="form-control" 
+                                name="lastName" 
+                                placeholder="Ejemplo: Santillan" 
+                                aria-label="Last name" 
+                                value={values.lastName} 
+                                onChange={handleOnChange} 
+                                required/>
                             </div>
                         </div>
-                        <div classNameName="mb-2">
+                        <div className="mb-2">
                             <label for="numero" className="form-label">Numero Telefonico</label>
-                            <input type="number" className="form-control" name="numero" placeholder="" required />
+                            <input type="number" 
+                            className="form-control" 
+                            name="number" placeholder="" 
+                            value={values.number} 
+                            onChange={handleOnChange} 
+                            required />
                         </div>
-                        <div classNameName="mb-2">
+                        <div className="mb-2">
                             <label for="correo" className="form-label">Correo electronico</label>
-                            <input type="text" className="form-control" name="correo" placeholder="ejemplo@mail.com" required />
-                        </div>
-                        <div classNameName="mb-2">
-                            <label for="correo" className="form-label">Repita su Correo electronico</label>
-                            <input type="text" className="form-control" name="correo" placeholder="ejemplo@mail.com" required />
+                            <input type="text" 
+                            className="form-control" 
+                            name="email" 
+                            placeholder="ejemplo@mail.com" 
+                            value={values.email} 
+                            onChange={handleOnChange} 
+                            required />
                         </div>
                         <div className="mb-2 btns-form">
                             <input type="submit" value="REALIZAR COMPRA" className="btn-form" />
                             <input type="reset" value="BORRAR" className="btn-form" />
                         </div>
                     </form>
+                    {purchaseID && <ShopMessage purchaseID={purchaseID} buyer={{...buyer}} /*nameBuyer={values.name} lastNameBuyer={values.lastName} emailBuyer={values.email}*/ />}
                 </div>
             </article>
             <div className="items-shop">
@@ -84,7 +142,7 @@ const Shop = () => {
                 <h4>Importe Total de la Compra: ${handlePrice()}</h4>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Shop;
