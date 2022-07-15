@@ -11,7 +11,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../Firebase/firebaseConfig";
 //DEVELOPING
 const Shop = () => {
-    const { items } = useContext(CartContext);
+    const { items, clear } = useContext(CartContext);
 
     //Sacar el precio total
     const handlePrice = () => { 
@@ -68,9 +68,10 @@ const Shop = () => {
             newShopping,
         });
         console.log("Documento escrito con ID:", docRef.id); //Id de orden autogenerada
-        setPurchaseID(docRef.id);//Guardar el ID de la orden
-        setBuyer(values);//Guardar los datos del funcionario para mostrarlos en el ShopMessage
-        setValues(initialBuyer);//Inicializar nuevamente el formulario
+        setPurchaseID(docRef.id); //Guardar el ID de la orden
+        setBuyer(values); //Guardar los datos del funcionario para mostrarlos en el ShopMessage
+        setValues(initialBuyer); //Inicializar nuevamente el formulario
+        clear(); //Vaciar el carrito
     };
 
     //Resetear el formulario
@@ -105,6 +106,7 @@ const Shop = () => {
                                 aria-label="First name" 
                                 value={values.name} 
                                 onChange={handleOnChange} 
+                                disabled={purchaseID!==''}
                                 required/>
                             </div>
                             <div className="col">
@@ -116,6 +118,7 @@ const Shop = () => {
                                 aria-label="Last name" 
                                 value={values.lastName} 
                                 onChange={handleOnChange} 
+                                disabled={purchaseID!==''}
                                 required/>
                             </div>
                         </div>
@@ -126,6 +129,7 @@ const Shop = () => {
                             name="number" placeholder="" 
                             value={values.number} 
                             onChange={handleOnChange} 
+                            disabled={purchaseID!==''}
                             required />
                         </div>
                         <div className="mb-2">
@@ -136,6 +140,7 @@ const Shop = () => {
                             placeholder="ejemplo@mail.com" 
                             value={values.email} 
                             onChange={handleOnChange} 
+                            disabled={purchaseID!==''}
                             required />
                         </div>
                         <div className="mb-2 btns-form">
