@@ -49,32 +49,17 @@ const Shop = () => {
         let itemsObj = items.map((item) => {
             return {
                 id: item.id,
-                title: item.title,
+                title: item.name,
                 quantity: item.qty,
                 price: item.price,
             };
         });
 
-        //Obtener el date
-        const transformarFecha = (fechaStamp) => {
-            let dia = fechaStamp.toDate().getDate();
-            let mes = fechaStamp.toDate().getMonth();
-            let anio = fechaStamp.toDate().getFullYear();
-            if(dia < 10){
-                dia = "0" + dia;
-            }
-            if(mes < 10){
-                mes = "0" + mes; 
-            }
-            console.log(transformarFecha);
-            return dia + "/" + mes + "/" + anio;
-        }
-
         //Creación del objeto que se va a mandar a Firebase
-        const newShopping ={
-            buyer: buyer,
+        const newShopping = {
+            buyer: values,
             items: itemsObj,
-            date: transformarFecha(new Date()),
+            date: new Date(),
             total: handlePrice(),
         }
 

@@ -12,11 +12,9 @@ import { db } from "../../Firebase/firebaseConfig";
 import { collection, query, getDocs, where } from "firebase/firestore";
 //DEVELOPING
 const CategoryType = () => {
-	const [albumData, setAlbumData] = useState([]);
+	const [productosData, setProductosData] = useState([]);
 	
 	const [isLoading, setIsLoading] = useState(true);
-
-	console.log(albumData);
 
 	const { category } = useParams();
 	
@@ -29,9 +27,10 @@ const CategoryType = () => {
 			querySnapshot.forEach((doc) => {
 				docs.push({ ...doc.data(), id: doc.id });
 			});
-			setAlbumData(docs);
+			setProductosData(docs);
 		};
 		getAlbums();
+		//TimeOut para que aparezca el Spinner y simule un retraso de red
 		setTimeout(() => {
 			setIsLoading(false);
 		}, 500);
@@ -44,9 +43,9 @@ const CategoryType = () => {
 					<Spinner />
 				</div>
 			) : (
-				albumData.map((data) => {
+				productosData.map((data) => {
 					return (
-						<div key={albumData.category}>
+						<div key={data.id}>
                             <Item data={data} />
                         </div>
 					);
