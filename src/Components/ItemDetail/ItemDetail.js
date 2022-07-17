@@ -69,7 +69,7 @@ const ItemDetail = ({ product }) => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default ItemDetail; //Para el desafio final sacar los 2 condicionales y hacerlo en uno solo (linea 58-70)
+export default ItemDetail;
