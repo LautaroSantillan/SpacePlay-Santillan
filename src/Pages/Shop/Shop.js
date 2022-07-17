@@ -20,7 +20,7 @@ const Shop = () => {
         return total;
     };
 
-    //Inicializar el estado de Comprador
+    //Inicializar el estado del Comprador
     const initialBuyer = {
         name: '',
         lastName: '',
@@ -61,16 +61,20 @@ const Shop = () => {
             items: itemsObj,
             date: new Date(),
             total: handlePrice(),
-        }
+        };
 
         //Mandar los datos contra Firebase
         const docRef = await addDoc(collection(db,'shopping'), {
             newShopping,
         });
         console.log("Documento escrito con ID:", docRef.id); //Id de orden autogenerada
+        
         setPurchaseID(docRef.id); //Guardar el ID de la orden
-        setBuyer(values); //Guardar los datos del funcionario para mostrarlos en el ShopMessage
+        
+        setBuyer(values); //Guardar los datos del formulario para mostrarlos en el ShopMessage
+        
         setValues(initialBuyer); //Inicializar nuevamente el formulario
+        
         clear(); //Vaciar el carrito
     };
 
@@ -148,7 +152,7 @@ const Shop = () => {
                             <input type="reset" value="BORRAR" className="btn-form"/>
                         </div>
                     </form>
-                    {purchaseID && <ShopMessage purchaseID={purchaseID} buyer={{...buyer}} /*nameBuyer={values.name} lastNameBuyer={values.lastName} emailBuyer={values.email}*/ />}
+                    {purchaseID && <ShopMessage purchaseID={purchaseID} buyer={{...buyer}} />}
                 </div>
             </article>
             <div className="items-shop">
