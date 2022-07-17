@@ -1,7 +1,7 @@
 //IMPORTS
 import React from 'react';
 //Logotipo
-import logo from '../../Images/logoCirc.png';
+import logo from '../../Imagenes/logoCirc.png';
 //Iconos
 import { FaWhatsapp } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
@@ -11,7 +11,7 @@ import "./Footer.css";
 //React-Router-DOM
 import { Link } from "react-router-dom";
 //DEVELOPING
-function Footer() {
+const Footer = () => {
     return (
         <div className="footer">
                 <div className="social">
@@ -34,7 +34,7 @@ function Footer() {
                     <small>&copy; 2022 <b>SPACEPLAY</b> - Todos los Derechos Reservados.</small>
                 </div>
         </div>
-    )
-}
+    );
+};
 
 export default Footer;

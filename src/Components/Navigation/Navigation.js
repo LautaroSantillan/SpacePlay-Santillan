@@ -2,7 +2,7 @@
 //Estilos
 import "./Navigation.css";
 //Logotipo
-import logo from '../../Images/logoCirc.png';
+import logo from '../../Imagenes/logoCirc.png';
 //Carrito
 import CartWidget from "../CartWidget/CartWidget";
 //Icono
