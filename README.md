@@ -15,7 +15,8 @@ Este proyecto e-commerce se inició con [Create React App](https://github.com/fa
 * [Firebase](https://firebase.google.com/) - Plataforma  de Google Analytics ubicada en la nube.
 * [React Router DOM](https://v5.reactrouter.com/web/guides/quick-start) - Es un paquete npm que permite implementar enrutamiento dinámico en un aplicación web.
 
-![](../my-app/src/Imagenes/Captura%20de%20SpacePlay.png)
+***Vista Previa de la WEB***
+![Captura de SpacePlay](https://user-images.githubusercontent.com/78935120/179429565-4982bd84-2636-4642-bb38-aef6a7396557.png)
 
 ## Explicación Técnica
 
