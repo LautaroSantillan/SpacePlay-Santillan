@@ -1,10 +1,10 @@
-# SPACEPLAY E-COMMERCE
+# SPACEPLAY
 
-Este proyecto se inició con [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto e-commerce se inició con [Create React App](https://github.com/facebook/create-react-app).
 
 ## Autor
 
-* **Lautaro Santillan** - *Initial worker*  
+* **Lautaro Santillan** - *Initial developer*  
 
 ## Construido con:
 
@@ -15,7 +15,7 @@ Este proyecto se inició con [Create React App](https://github.com/facebook/crea
 * [Firebase](https://firebase.google.com/) - Plataforma  de Google Analytics ubicada en la nube.
 * [React Router DOM](https://v5.reactrouter.com/web/guides/quick-start) - Es un paquete npm que permite implementar enrutamiento dinámico en un aplicación web.
 
-![](../../../Captura%20de%20SpacePlay.png)
+![](../my-app/src/Imagenes/Captura%20de%20SpacePlay.png)
 
 ## Explicación Técnica
 
