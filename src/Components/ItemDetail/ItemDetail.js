@@ -10,7 +10,7 @@ import { NavLink } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
 //DEVELOPING
 const ItemDetail = ({ product }) => {
-    const {addItem, isInCart} = useContext(CartContext)
+    const {addItem, isInCart} = useContext(CartContext); //Extraer del Context
 
     return (
         <div className="detailContainer">
@@ -44,8 +44,8 @@ const ItemDetail = ({ product }) => {
             </div>
             <div className="detailContainer-descriptions">
                 <h2>{product.title}</h2>
-                <p>Categoria: {product.category}</p>
-                <p>Precio Unitario: ${product.price}</p>
+                <p><span>Categoria:</span> {product.category}</p>
+                <p><span>Precio Unitario:</span> ${product.price}</p>
                 <p>{product.description}</p>
                 <ul>
                     <li>{product.descriptionPlus}</li>

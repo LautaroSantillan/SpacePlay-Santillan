@@ -27,4 +27,10 @@
   background: #dee1df;
   text-decoration: underline;
 }
+
+@media screen and (max-width: 576px) {
+  .NavBar {
+    gap: 15px;
+  }
+}
 /*# sourceMappingURL=NavBar.css.map */

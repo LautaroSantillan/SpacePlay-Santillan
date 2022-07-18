@@ -28,11 +28,35 @@
         text-align: initial;
         font-size: 18px;
     }
+    span{
+        text-decoration: underline;
+    }
+}
+
+.carousel-item{
+    img{
+        width: 350px !important;
+        height: 375px;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .carousel-item{
+        img{
+            width: 300px !important;
+            height: 450px;
+        }
+    }
 }
 
 @media screen and (max-width: 768px){
     .detailContainer{
         flex-wrap: wrap;
         margin: 25px;
+    }
+    .carousel-item{
+        img{
+            height: 350px;
+        }
     }
 }

@@ -19,3 +19,9 @@
         text-decoration: underline;
     }
 }
+
+@media screen and (max-width: 576px){
+    .NavBar{
+        gap: 15px;
+    }
+}

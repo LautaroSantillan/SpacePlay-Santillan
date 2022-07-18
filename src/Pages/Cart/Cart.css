@@ -37,9 +37,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 20px;
     border-bottom: 2px solid skyblue;
-    padding-bottom: 20px;
+    padding: 20px;
 }
 
 .cart-titulo{
