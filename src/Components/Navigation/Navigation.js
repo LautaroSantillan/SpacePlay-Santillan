@@ -1,4 +1,5 @@
 //IMPORTS
+import { useEffect, useState } from "react";
 //Estilos
 import "./Navigation.css";
 //Logotipo
@@ -13,14 +14,27 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { Link } from "react-router-dom";
 //DEVELOPING
 const Navigation = () => {
+    const [width, setWidth] = useState(window.innerWidth);
+
+    const changeSize = () => {
+        setWidth(window.innerWidth);
+    };
+
+    useEffect(() => {
+        window.addEventListener('resize', changeSize);
+    });
+
     //Avisar de que se cambió de página
     const onClick = () => {
-        swal({
-            title: "ATENCIÓN!",
-            text: "Usted ha cambiando de página, por favor, cierre el menu de navegación",
-            icon: "info",
-            button: "Continuar"
-        });
+        if(width <= 992)
+        {
+            swal({
+                title: "CAMBIO DE PÁGINA!",
+                text: "Cierre el menu de navegación",
+                icon: "success",
+                button: "Continuar"
+            });
+        }
     };
 
     return (
