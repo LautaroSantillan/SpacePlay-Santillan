@@ -11,15 +11,20 @@
     font-size: 25px;
     padding: 10px;
     display: flex;
-    // line-height: 50px;
     transform: translateY(-100rem);
     animation: slideIn 1s forwards;
     &:hover{
         font-size: 27px;
         transition: all .5s;
     }
+    a{
+        display: flex;
+        align-items: center;
+    }
 }
 
 .contadorCart{
-    margin: 0px 5px;
+    margin: 5px;
+    padding-top: 5px;
+    font-weight: bold;
 }
