@@ -1,5 +1,6 @@
 //IMPORTS
 import * as React from 'react';
+//Material UI
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -15,7 +16,7 @@ export default function Item ({ data }) {
 		img: {
 			padding: 10
 		}
-	}
+	};
 
 	return (
 		<Card className='container' sx={{ maxWidth: 345, margin: 10 }}>
@@ -38,5 +39,5 @@ export default function Item ({ data }) {
 				</Button>
 			</CardActions>
 		</Card>
-	)
-}
+	);
+};

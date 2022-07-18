@@ -3,7 +3,7 @@
 import "./Error.css";
 //React-Router-DOM
 import { Link } from 'react-router-dom';
-//DEVELOPING
+
 const Error = () => { 
     return (
     <div className="containerError">

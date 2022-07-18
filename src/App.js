@@ -16,7 +16,7 @@ import CategoryType from "./Pages/CategoryType/CategoryType";
 import Cart from "./Pages/Cart/Cart";
 import Shop from "./Pages/Shop/Shop";
 import Error from "./Pages/Error/Error"; 
-//DEVELOPING
+
 const App = () => {
 	return (
 		<CartProvider>
@@ -43,6 +43,6 @@ const App = () => {
 			</Router>
 		</CartProvider>
 	);
-}
+};
 
 export default App;

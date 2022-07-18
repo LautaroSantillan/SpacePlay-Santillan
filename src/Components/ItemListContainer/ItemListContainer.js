@@ -5,11 +5,10 @@ import ItemList from "../ItemList/ItemList";
 //Firebase-Firestone
 import { db } from "../../Firebase/firebaseConfig";
 import { collection, query, getDocs } from "firebase/firestore";
-//DEVELOPING
+
 const ItemListContainer = () => {
     const [albumsData, setAlbumsData] = useState([]);
 
-    //Obtener la coleccion de productos
 	const getAlbums = async () => {
 		const q = query(collection(db, "playstation"));
 		const querySnapshot = await getDocs(q);
@@ -20,12 +19,9 @@ const ItemListContainer = () => {
 		setAlbumsData(docs);
 	};
     
-    //Setear
 	useEffect(() => {
 		getAlbums();
 	}, []);
-
-    console.log('Listado de Productos:', albumsData);
 
 	return (
         <div key={albumsData.id}>

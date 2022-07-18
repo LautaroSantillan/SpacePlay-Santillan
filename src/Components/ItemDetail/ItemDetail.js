@@ -8,9 +8,9 @@ import "./ItemDetail.css";
 import { NavLink } from "react-router-dom";
 //Context
 import { CartContext } from "../../Context/CartContext";
-//DEVELOPING
+
 const ItemDetail = ({ product }) => {
-    const {addItem, isInCart} = useContext(CartContext); //Extraer del Context
+    const {addItem, isInCart} = useContext(CartContext);
 
     return (
         <div className="detailContainer">

@@ -6,18 +6,16 @@ import "./Cart.css";
 import { CartContext } from "../../Context/CartContext";
 //React-Router-DOM
 import { Link } from "react-router-dom";
-//DEVELOPING
+
 const Cart = () => {
     const { items, removeItem, clear, addItem } = useContext(CartContext);
 
-    //Sacar el precio total
     const handlePrice = () => { 
         let total = 0;
         items.map((item) => (total += item.qty * item.price));
         return total;
     };
 
-    //Sumar y Restar productos
     const handleChange = (item, d) => { 
         if(item.qty >= 0 && item.qty < 10)
         {
@@ -25,14 +23,12 @@ const Cart = () => {
         }        
     };
 
-    //Estilo en linea
     const styles = {
         div:{
             paddingTop: 130
         }
     };
 
-    //Verificar si el carrito esta vacio
     if(items.length === 0){
         return(
             <div className="cartnull" style={styles.div}>
@@ -46,7 +42,6 @@ const Cart = () => {
         )
     };
     
-    //Si el carrito contiene productos
     return (
         <div className="cartcontainer" style={styles.div}>
             <h2 className="cart-titulo">CARRITO</h2>

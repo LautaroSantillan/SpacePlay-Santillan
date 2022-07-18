@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 //Estilos
 import "./Navigation.css";
 //Logotipo
-import logo from '../../Imagenes/logoCirc.png';
+import logo from '../../assets/logoCirc.png';
 //Sweet Alert
 import swal from 'sweetalert';
 //Carrito
@@ -12,7 +12,7 @@ import CartWidget from "../CartWidget/CartWidget";
 import { GiHamburgerMenu } from 'react-icons/gi';
 //React-Router-DOM
 import { Link } from "react-router-dom";
-//DEVELOPING
+
 const Navigation = () => {
     const [width, setWidth] = useState(window.innerWidth);
 
@@ -24,7 +24,6 @@ const Navigation = () => {
         window.addEventListener('resize', changeSize);
     });
 
-    //Avisar de que se cambió de página
     const onClick = () => {
         if(width <= 992)
         {

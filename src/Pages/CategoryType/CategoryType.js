@@ -10,7 +10,7 @@ import Spinner from "../../Components/Spinner/Spinner";
 // Firebase-Firestone
 import { db } from "../../Firebase/firebaseConfig";
 import { collection, query, getDocs, where } from "firebase/firestore";
-//DEVELOPING
+
 const CategoryType = () => {
 	const [productosData, setProductosData] = useState([]);
 	
@@ -18,7 +18,6 @@ const CategoryType = () => {
 
 	const { category } = useParams();
 	
-	//Obtener los category de Firebase
 	useEffect(() => {
 		const getAlbums = async () => {
 			const q = query(collection(db, 'playstation'), where('category', '==', category));
@@ -30,7 +29,6 @@ const CategoryType = () => {
 			setProductosData(docs);
 		};
 		getAlbums();
-		//TimeOut para que aparezca el Spinner y simule un retraso de red
 		setTimeout(() => {
 			setIsLoading(false);
 		}, 500);

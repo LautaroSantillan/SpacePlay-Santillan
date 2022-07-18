@@ -8,12 +8,12 @@ import { useParams } from 'react-router-dom';
 //Firebase-Firestone
 import { db } from "../../Firebase/firebaseConfig";
 import { collection, query, getDocs, documentId, where } from "firebase/firestore";
-//DEVELOPING
+
 const ItemDetailContainer = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     const [albumData, setAlbumData] = useState([]);
-    //Obtener el id de X producto 
+    
     let { id } = useParams();
 
     useEffect(() => {
@@ -32,9 +32,6 @@ const ItemDetailContainer = () => {
         }, 1000);
     }, [id]);
 
-    console.log("Producto Unitario:", albumData);
-
-    //Estilos en linea
     const styles = {
         div:{
             paddingTop: 130
@@ -58,7 +55,7 @@ const ItemDetailContainer = () => {
             )
             }
         </div>
-    )
-}
+    );
+};
 
 export default ItemDetailContainer;

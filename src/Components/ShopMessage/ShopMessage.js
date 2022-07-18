@@ -1,9 +1,9 @@
 //IMPORTS
 import * as React from 'react';
-//MUI
+//Material UI
 import Alert from '@mui/material/Alert';
 import Stack from '@mui/material/Stack';
-//DEVELOPING
+
 const ShopMessage = ({ purchaseID, buyer }) => {
     return (
         <Stack sx={{ width: '100%', textAlign: "left" }} spacing={2}>
@@ -16,6 +16,6 @@ const ShopMessage = ({ purchaseID, buyer }) => {
             </Alert>
         </Stack>
     );
-}
+};
 
 export default ShopMessage;

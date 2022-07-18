@@ -1,9 +1,8 @@
 //IMPORTS
 //Estilos
 import Item from '../Item/Item';
-//DEVELOPING
+
 const ItemList = ({ articles }) => {
-	//Estilos en linea
 	const styles = {
 		cards: {
 			padding: 10,
@@ -14,7 +13,7 @@ const ItemList = ({ articles }) => {
 			marginLeft: "-15px",
 			justifyContent: "center"
 		}
-	}
+	};
 
 	return (
 		<div className='ArticleSection' style={styles.cards}>

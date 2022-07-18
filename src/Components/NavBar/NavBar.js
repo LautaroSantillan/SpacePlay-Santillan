@@ -4,7 +4,7 @@ import React from 'react';
 import "./NavBar.css";
 //React-Router-DOM
 import { Link } from "react-router-dom";
-//DEVELOPING
+
 const NavBar = () => {
     return (
         <div className='navbar-category'>
@@ -22,7 +22,7 @@ const NavBar = () => {
                 </ul>
             </nav>
         </div>
-    )
-}
+    );
+};
 
 export default NavBar;

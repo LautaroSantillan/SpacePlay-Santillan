@@ -6,7 +6,7 @@ import "./ItemCount.css";
 import swal from 'sweetalert';
 
 const ItemCount = ({item, stock, initial, addItem}) => {
-    const[qty, setQty] = useState(initial); //qty = quantity
+    const[qty, setQty] = useState(initial);
 
     const sumaQty = () => {
         if(qty < stock) {
@@ -18,9 +18,9 @@ const ItemCount = ({item, stock, initial, addItem}) => {
                 text: "Usted ha alcanzado el limite de items",
                 icon: "info",
                 button: "Continuar"
-            })
+            });
         }
-    }
+    };
 
     const restQty = () => {
         if(qty > initial) {
@@ -32,9 +32,9 @@ const ItemCount = ({item, stock, initial, addItem}) => {
                 text: "Usted no puede tener menos de 0 items",
                 icon: "info",
                 button: "Continuar"
-            })
+            });
         }
-    }
+    };
 
     return (
         <>

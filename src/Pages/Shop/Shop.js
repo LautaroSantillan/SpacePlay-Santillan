@@ -9,18 +9,16 @@ import { CartContext } from "../../Context/CartContext";
 // Firebase
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../Firebase/firebaseConfig";
-//DEVELOPING
+
 const Shop = () => {
     const { items, clear } = useContext(CartContext);
 
-    //Sacar el precio total
     const handlePrice = () => { 
         let total = 0;
         items.map((item) => (total += item.qty * item.price));
         return total;
     };
 
-    //Inicializar el estado del Comprador
     const initialBuyer = {
         name: '',
         lastName: '',
@@ -34,18 +32,15 @@ const Shop = () => {
 
     const [purchaseID, setPurchaseID] = useState("");
 
-    //Tomar los datos del formulario y setearlos en el estado
     const handleOnChange = (e) => {
         const { value, name } = e.target;
         setValues({ ...values, [name]: value });
     };
 
-    //Mandar los datos a Firebase y que este devuelva el ID del documento
     const onSubmit = async (e) => {
         e.preventDefault();
         console.log(values);
 
-        //Creación del objeto con los items comprados
         let itemsObj = items.map((item) => {
             return {
                 id: item.id,
@@ -55,7 +50,6 @@ const Shop = () => {
             };
         });
 
-        //Creación del objeto que se va a mandar a Firebase
         const newShopping = {
             buyer: values,
             items: itemsObj,
@@ -63,27 +57,23 @@ const Shop = () => {
             total: handlePrice(),
         };
 
-        //Mandar los datos contra Firebase
         const docRef = await addDoc(collection(db,'shopping'), {
             newShopping,
         });
-        console.log("Documento escrito con ID:", docRef.id); //Id de orden autogenerada
         
-        setPurchaseID(docRef.id); //Guardar el ID de la orden
+        setPurchaseID(docRef.id); 
         
-        setBuyer(values); //Guardar los datos del formulario para mostrarlos en el ShopMessage
+        setBuyer(values); 
+
+        setValues(initialBuyer); 
         
-        setValues(initialBuyer); //Inicializar nuevamente el formulario
-        
-        clear(); //Vaciar el carrito
+        clear(); 
     };
 
-    //Resetear el formulario
     const onReset = () => {
         setValues(initialBuyer);
     };
 
-    //Estilo en linea
     const styles = {
         div:{
             paddingTop: 130

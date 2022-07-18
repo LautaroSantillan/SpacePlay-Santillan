@@ -6,13 +6,11 @@ export const CartContext = createContext([]);
 export default function CartProvider({ children }) {
     const [items, setItems] = useState([]);
     
-    //Fijar si existe X producto
     const isInCart = (id) => {
         const find = items.find(item => item.id === id);
         return find;
     };
 
-    //Agregar o Eliminar Producto
     const addItem = (item, qty) => {
         isInCart(item.id) ?
                         setItems(items.map((prod) => {
@@ -25,15 +23,12 @@ export default function CartProvider({ children }) {
                         setItems([...items,  { id: item.id, name: item.title, price: item.price, qty: qty, img: item.pictureUrl }])
     };
 
-    //Eliminar Producto
     const removeItem = (id) => {
         setItems(items.filter(item => item.id !== id))
     };
 
-    //Vaciar Carrito
     const clear = () => {
         setItems([]);
-        console.log("Se ha vaciado el carrito de compras");
     };
 
     return (
@@ -41,5 +36,4 @@ export default function CartProvider({ children }) {
             { children }
         </CartContext.Provider>
     );
-
-}
+};
