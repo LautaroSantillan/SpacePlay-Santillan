@@ -3,6 +3,8 @@
 import "./Navigation.css";
 //Logotipo
 import logo from '../../Imagenes/logoCirc.png';
+//Sweet Alert
+import swal from 'sweetalert';
 //Carrito
 import CartWidget from "../CartWidget/CartWidget";
 //Icono
@@ -11,6 +13,16 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { Link } from "react-router-dom";
 //DEVELOPING
 const Navigation = () => {
+    //Avisar de que se cambió de página
+    const onClick = () => {
+        swal({
+            title: "ATENCIÓN!",
+            text: "Usted ha cambiando de página, por favor, cierre el menu de navegación",
+            icon: "info",
+            button: "Continuar"
+        });
+    };
+
     return (
         <div className="header">
             <Link to="/" className="logo">
@@ -23,10 +35,10 @@ const Navigation = () => {
                 </label>
                 <input type="checkbox" id="menu"/>
                 <ul className="navbar nav-animaciones">
-                    <Link to="/" className="Li">
+                    <Link to="/" className="Li" onClick={onClick}>
                         INICIO
                     </Link>
-                    <Link to="/nosotros" className="Li">
+                    <Link to="/nosotros" className="Li" onClick={onClick}>
                         NOSOTROS
                     </Link>
                 </ul>

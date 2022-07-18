@@ -201,9 +201,9 @@
   .navbar {
     background-color: #3ddac4;
     width: 100%;
-    height: calc(100% - 5rem);
+    height: calc(100% - 95px);
     left: -100%;
-    top: 6.25rem;
+    top: 95px;
     margin: 0;
     padding: 1.25rem 0;
     -webkit-box-orient: vertical;
